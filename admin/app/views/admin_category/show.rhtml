@@ -1,0 +1,44 @@
+<center>
+<% for column in Category.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b>
+ <%=h @category.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @category %> |
+<%= link_to 'Back', :action => 'list' %>
+</center>
+<center><h3>Items with this category</h3></center>
+<center>
+
+</b>
+<table border=1 cellpadding="5" cellspacing="0">
+
+<% 
+  odd_or_even = 0
+for item in @items
+  odd_or_even = 1 - odd_or_even 
+%>
+  <tr valign="top" class="ListLine<%= odd_or_even %>">
+
+    <td >
+      <strong><span class="ListTitle"><%= h(item.barcode) %></span></strong> |
+      <%= h(truncate(item.description, 80)) %>
+    </td>
+
+    <td  align="left">
+      <span class="ListTitle">Qty: <%= h(item.qty) %></span><br />
+    </td>
+
+    <td >
+      Minimum stock:<strong><span class="ListTitle"><%= h(item.minimum_stock) %></span></strong> 
+    </td>
+
+    <td class="ListActions">
+      <%= link_to 'Edit', :action => 'edit_item', :id => item %><br/>
+    </td>
+  </tr>
+<% end %>
+</table>
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <%= content_tag 'title',"G.A.L. : #{controller.controller_name}##{controller.action_name}" %>
+ 
+ <%= stylesheet_link_tag 'style' %> 
+ <%= stylesheet_link_tag 'css_form', :media => "all" %>
+ <%= stylesheet_link_tag 'gal_scaffold', :media => "all" %>
+ <%= stylesheet_link_tag "print", :title=>'print preview', :rel=>'alternate stylesheet' %>
+ <%= stylesheet_link_tag "print", :media => "print" %>
+  
+<SCRIPT type="text/javascript" src="/javascripts/JSCookMenu.js" ></script>
+<LINK type="text/css" REL="stylesheet" HREF="/ThemeOffice/theme.css" />
+<SCRIPT type="text/javascript" src="/ThemeOffice/theme.js"></SCRIPT>
+
+<SCRIPT type="text/javascript"><!--
+  var myMenu = <%=render :partial=>"/partial/jsmenu" %>
+--></SCRIPT>
+
+<%= stylesheet_link_tag 'calendar-system.css' %>
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag 'calendar', 'calendar-en', 'calendar-setup' %>
+
+<%= javascript_include_tag 'redbox.js' %>
+<%= stylesheet_link_tag 'redbox' %>
+
+</head>
+<body>
+% if session[:return_to].nil?
+<DIV ID='myMenuID' align="center"></DIV>
+  <%= javascript_tag "cmDraw ('myMenuID', myMenu, 'hbr', cmThemeOffice, 'ThemeOffice');" %>
+% end
+
+<div class="notice" id="notice"><%= flash["notice"] %> &nbsp;</div>
+<div class='div_layout'>
+  <%= @content_for_layout %>
+  <%= my_redbox_content_tag %> 
+  <%= wait_tag('wait') %>
+</div>
+
+<div class="div_navigation">
+<hr />
+<table border="0" width="100%"  class="empty"> 
+ <tr>
+ <td align="left">
+<%if session[:user] %>
+<%=_'User %s',session[:user].login %> (<%= link_to _('Logout'), :action=>"logout", :controller=>"account"%>)
+<% else %>
+<%= link_to "&#171; login", :action=>"login", :controller=>"account"%>  
+<% end %>
+ </td>
+ <td align="right">
+  &#169; <a href="http://www.addsw.it" target="_blank">AD.D. <small>SOFTWARE</small></a> -
+  <%=_'Licence'%> <a href="/gpl.txt" target="_blank">GPL</a> Info: <a href="mailto:gal@addsw.it">gal @ addsw.it</a>
+  </td>
+  </tr>
+  </table>
+</div>  
+
+<!--
+<script>
+Ajax.Responders.register({
+  // log the beginning of the requests
+  onComplete: function(request, transport) {
+    $('debug').innerHTML='<p><strong>http status: ' + transport.status + '</strong></p>' +
+    '&lt;pre>' + transport.responseText.escapeHTML() + '&lt;/pre>'
+  }
+});
+</script>
+<hr /> <%=link_to_function "Debug rjs", "Element.toggle('debug')" %> <br />
+<div id="debug" style='display:none'>Debug info</div>
+-->
+
+</body>
+</html>

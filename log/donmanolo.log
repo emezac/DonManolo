@@ -1,0 +1,919 @@
+  [4;36;1mSQL (0.000607)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.076275)[0m   [0mSELECT * FROM users WHERE (name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Columns (0.066097)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;36;1mSQL (0.000400)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.001769)[0m   [0mSELECT * FROM users WHERE (name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Columns (0.002861)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUemployee Load (0.014876)[0m   [0mSELECT * FROM uemployees WHERE (id = 18) LIMIT 1[0m
+  [4;36;1mUemployee Columns (0.007333)[0m   [0;1mSHOW FIELDS FROM uemployees[0m
+  [4;35;1mEmployee Columns (0.002345)[0m   [0mSHOW FIELDS FROM employees[0m
+  [4;36;1mEmployee Load (0.001382)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mClient Columns (0.010800)[0m   [0mSHOW FIELDS FROM clients[0m
+  [4;36;1mClient Load (0.006618)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.016666)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.003106)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.002974)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001325)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001320)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001772)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001278)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Load (0.001184)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mItem Load (0.001816)[0m   [0mSELECT * FROM items WHERE (barcode = '100') LIMIT 1[0m
+  [4;36;1mItem Load (0.001995)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mItem Columns (0.003433)[0m   [0mSHOW FIELDS FROM items[0m
+  [4;36;1mSaletransaction Columns (0.002939)[0m   [0;1mSHOW FIELDS FROM saletransactions[0m
+  [4;35;1mSQL (0.000382)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.127696)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711120352365', 21, '1001', 1)[0m
+  [4;35;1mSQL (0.003370)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002072)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mItem Load (0.001960)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Load (0.001967)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mCategory Columns (0.002305)[0m   [0mSHOW FIELDS FROM categories[0m
+  [4;36;1mCategory Load (0.001032)[0m   [0;1mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;35;1mItem Load (0.002003)[0m   [0mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;36;1mSQL (0.000380)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000681)[0m   [0mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711120352365', 21, '2001', 1)[0m
+  [4;36;1mSQL (0.001928)[0m   [0;1mCOMMIT[0m
+  [4;35;1mItem Load (0.002016)[0m   [0mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;36;1mItem Load (0.002263)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mItem Load (0.001993)[0m   [0mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;36;1mCategory Load (0.001000)[0m   [0;1mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;35;1mSQL (0.001247)[0m   [0mSELECT sum(total) AS sum_total FROM saletransactions WHERE (idsale = 200711120352365) [0m
+  [4;36;1mSale Columns (0.002331)[0m   [0;1mSHOW FIELDS FROM sales[0m
+  [4;35;1mSQL (0.000375)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.033627)[0m   [0;1mINSERT INTO sales (`total`, `idsale`) VALUES(26.0, '200711120352365')[0m
+  [4;35;1mSQL (0.003504)[0m   [0mCOMMIT[0m
+  [4;36;1mCashpayment Columns (0.002660)[0m   [0;1mSHOW FIELDS FROM cashpayments[0m
+  [4;35;1mSQL (0.000804)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.007778)[0m   [0;1mINSERT INTO cashpayments (`id`, `amount`, `clientid`) VALUES('200711120352365', 26.0, 1)[0m
+  [4;35;1mSQL (0.000870)[0m   [0mCOMMIT[0m
+  [4;36;1mClient Load (0.002286)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001263)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001377)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001990)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mItem Load (0.002135)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mSQL (0.000464)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000661)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711120352471', 21, '1001', 1)[0m
+  [4;35;1mSQL (0.003050)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.001976)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mItem Load (0.001988)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Load (0.001996)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mCategory Load (0.001071)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mItem Load (0.002055)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mSQL (0.000463)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000665)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711120352471', 21, '2001', 1)[0m
+  [4;35;1mSQL (0.003072)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002049)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002050)[0m   [0mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;36;1mItem Load (0.001965)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mCategory Load (0.001055)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mItem Load (0.002010)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.000475)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000651)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 0.017, 0.017, '200711120352471', 21, '1', 1)[0m
+  [4;35;1mSQL (0.005207)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002051)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+  [4;35;1mItem Load (0.001986)[0m   [0mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+  [4;36;1mItem Load (0.002057)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000989)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 3) [0m
+  [4;36;1mItem Load (0.002038)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+  [4;35;1mItem Load (0.001961)[0m   [0mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+  [4;36;1mSaletransaction Load (0.001714)[0m   [0;1mSELECT * FROM saletransactions WHERE (saletransactions.`id` = 5) [0m
+  [4;35;1mSaletransaction Update (0.005715)[0m   [0mUPDATE saletransactions SET `item` = '1', `cashierid` = 21, `price` = 0.017, `total` = 4.25, `clientid` = 1, `idsale` = '200711120352471', `qty` = '250.0' WHERE `id` = 5[0m
+  [4;36;1mSQL (0.001137)[0m   [0;1mSELECT sum(total) AS sum_total FROM saletransactions WHERE (idsale = 200711120352471) [0m
+  [4;35;1mSQL (0.000379)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000655)[0m   [0;1mINSERT INTO sales (`total`, `idsale`) VALUES(30.25, '200711120352471')[0m
+  [4;35;1mSQL (0.004833)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000355)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000610)[0m   [0mINSERT INTO cashpayments (`id`, `amount`, `clientid`) VALUES('200711120352471', 30.25, 1)[0m
+  [4;36;1mSQL (0.000893)[0m   [0;1mCOMMIT[0m
+  [4;35;1mClient Load (0.002853)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001562)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001432)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001323)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mSaletransaction Load (0.002109)[0m   [0mSELECT * FROM saletransactions [0m
+  [4;36;1mItem Load (0.001932)[0m   [0;1mSELECT * FROM items WHERE (barcode = 1001) LIMIT 1[0m
+  [4;35;1mSQL (0.000427)[0m   [0mBEGIN[0m
+  [4;36;1mItem Update (0.000794)[0m   [0;1mUPDATE items SET `wmsystem_id` = 1, `barcode` = '1001', `notes` = '', `expiration_date` = '2007-10-24 00:00:00', `cost_price` = 12.0, `category_id` = 2, `price` = 13.0, `itemalias_id` = 0, `description` = 'Pascual de a litro y medio', `minimum_stock` = 25, `qty` = 195 WHERE `id` = 1[0m
+  [4;35;1mSQL (0.005687)[0m   [0mCOMMIT[0m
+  [4;36;1mHistoricsale Columns (0.002734)[0m   [0;1mSHOW FIELDS FROM historicsales[0m
+  [4;35;1mSQL (0.000617)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.026323)[0m   [0;1mINSERT INTO historicsales (`item_id`, `qty`, `price`, `client_id`, `total`, `cashier_id`, `idsale`) VALUES('1001', '1.0', 13.0, 1, 13.0, 21, '200711120352365')[0m
+  [4;35;1mSQL (0.000986)[0m   [0mCOMMIT[0m
+  [4;36;1mSaletransaction Load (0.001611)[0m   [0;1mSELECT * FROM saletransactions WHERE (saletransactions.`id` = 1) [0m
+  [4;35;1mSQL (0.000370)[0m   [0mBEGIN[0m
+  [4;36;1mSaletransaction Destroy (0.000705)[0m   [0;1m DELETE FROM saletransactions
+ WHERE `id` = 1
+[0m
+  [4;35;1mSQL (0.000958)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.001942)[0m   [0;1mSELECT * FROM items WHERE (barcode = 2001) LIMIT 1[0m
+  [4;35;1mSQL (0.000373)[0m   [0mBEGIN[0m
+  [4;36;1mItem Update (0.000769)[0m   [0;1mUPDATE items SET `wmsystem_id` = 1, `barcode` = '2001', `notes` = '', `expiration_date` = '2007-10-23 18:04:00', `cost_price` = 12.0, `category_id` = 2, `price` = 13.0, `itemalias_id` = 0, `description` = 'Cerveza de 10 litros', `minimum_stock` = 98, `qty` = 74 WHERE `id` = 4[0m
+  [4;35;1mSQL (0.000983)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000344)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000635)[0m   [0mINSERT INTO historicsales (`item_id`, `qty`, `price`, `client_id`, `total`, `cashier_id`, `idsale`) VALUES('2001', '1.0', 13.0, 1, 13.0, 21, '200711120352365')[0m
+  [4;36;1mSQL (0.000905)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSaletransaction Load (0.001605)[0m   [0mSELECT * FROM saletransactions WHERE (saletransactions.`id` = 2) [0m
+  [4;36;1mSQL (0.000377)[0m   [0;1mBEGIN[0m
+  [4;35;1mSaletransaction Destroy (0.000655)[0m   [0m DELETE FROM saletransactions
+ WHERE `id` = 2
+[0m
+  [4;36;1mSQL (0.000938)[0m   [0;1mCOMMIT[0m
+  [4;35;1mItem Load (0.001911)[0m   [0mSELECT * FROM items WHERE (barcode = 1001) LIMIT 1[0m
+  [4;36;1mSQL (0.000462)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Update (0.000796)[0m   [0mUPDATE items SET `wmsystem_id` = 1, `barcode` = '1001', `notes` = '', `expiration_date` = '2007-10-24 00:00:00', `cost_price` = 12.0, `category_id` = 2, `price` = 13.0, `itemalias_id` = 0, `description` = 'Pascual de a litro y medio', `minimum_stock` = 25, `qty` = 194 WHERE `id` = 1[0m
+  [4;36;1mSQL (0.070176)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000351)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000746)[0m   [0;1mINSERT INTO historicsales (`item_id`, `qty`, `price`, `client_id`, `total`, `cashier_id`, `idsale`) VALUES('1001', '1.0', 13.0, 1, 13.0, 21, '200711120352471')[0m
+  [4;35;1mSQL (0.000957)[0m   [0mCOMMIT[0m
+  [4;36;1mSaletransaction Load (0.001627)[0m   [0;1mSELECT * FROM saletransactions WHERE (saletransactions.`id` = 3) [0m
+  [4;35;1mSQL (0.000374)[0m   [0mBEGIN[0m
+  [4;36;1mSaletransaction Destroy (0.000651)[0m   [0;1m DELETE FROM saletransactions
+ WHERE `id` = 3
+[0m
+  [4;35;1mSQL (0.000963)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.001955)[0m   [0;1mSELECT * FROM items WHERE (barcode = 2001) LIMIT 1[0m
+  [4;35;1mSQL (0.000458)[0m   [0mBEGIN[0m
+  [4;36;1mItem Update (0.000788)[0m   [0;1mUPDATE items SET `wmsystem_id` = 1, `barcode` = '2001', `notes` = '', `expiration_date` = '2007-10-23 18:04:00', `cost_price` = 12.0, `category_id` = 2, `price` = 13.0, `itemalias_id` = 0, `description` = 'Cerveza de 10 litros', `minimum_stock` = 98, `qty` = 73 WHERE `id` = 4[0m
+  [4;35;1mSQL (0.000969)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000432)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.011896)[0m   [0mINSERT INTO historicsales (`item_id`, `qty`, `price`, `client_id`, `total`, `cashier_id`, `idsale`) VALUES('2001', '1.0', 13.0, 1, 13.0, 21, '200711120352471')[0m
+  [4;36;1mSQL (0.000974)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSaletransaction Load (0.001573)[0m   [0mSELECT * FROM saletransactions WHERE (saletransactions.`id` = 4) [0m
+  [4;36;1mSQL (0.000474)[0m   [0;1mBEGIN[0m
+  [4;35;1mSaletransaction Destroy (0.000670)[0m   [0m DELETE FROM saletransactions
+ WHERE `id` = 4
+[0m
+  [4;36;1mSQL (0.001142)[0m   [0;1mCOMMIT[0m
+  [4;35;1mItem Load (0.002135)[0m   [0mSELECT * FROM items WHERE (barcode = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.000388)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Update (0.000956)[0m   [0mUPDATE items SET `wmsystem_id` = 1, `barcode` = '1', `notes` = '', `expiration_date` = '2007-10-23 23:35:00', `cost_price` = 0.013, `category_id` = 3, `price` = 0.017, `itemalias_id` = 0, `description` = 'Croquetas para perro', `minimum_stock` = 25000, `qty` = 4750 WHERE `id` = 6[0m
+  [4;36;1mSQL (0.001130)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.001125)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000725)[0m   [0;1mINSERT INTO historicsales (`item_id`, `qty`, `price`, `client_id`, `total`, `cashier_id`, `idsale`) VALUES('1', '250.0', 0.017, 1, 4.25, 21, '200711120352471')[0m
+  [4;35;1mSQL (0.000942)[0m   [0mCOMMIT[0m
+  [4;36;1mSaletransaction Load (0.001587)[0m   [0;1mSELECT * FROM saletransactions WHERE (saletransactions.`id` = 5) [0m
+  [4;35;1mSQL (0.000374)[0m   [0mBEGIN[0m
+  [4;36;1mSaletransaction Destroy (0.000666)[0m   [0;1m DELETE FROM saletransactions
+ WHERE `id` = 5
+[0m
+  [4;35;1mSQL (0.000918)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000432)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.001872)[0m   [0mSELECT * FROM users WHERE (name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Columns (0.003291)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUemployee Load (0.021839)[0m   [0mSELECT * FROM uemployees WHERE (id = 18) LIMIT 1[0m
+  [4;36;1mUemployee Columns (0.002281)[0m   [0;1mSHOW FIELDS FROM uemployees[0m
+  [4;35;1mEmployee Columns (0.002519)[0m   [0mSHOW FIELDS FROM employees[0m
+  [4;36;1mEmployee Load (0.001420)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mClient Columns (0.003258)[0m   [0mSHOW FIELDS FROM clients[0m
+  [4;36;1mClient Load (0.001333)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.002056)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001307)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001293)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001328)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001328)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001288)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001296)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Load (0.001206)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mItem Load (0.001942)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Columns (0.003675)[0m   [0;1mSHOW FIELDS FROM items[0m
+  [4;35;1mSaletransaction Columns (0.003067)[0m   [0mSHOW FIELDS FROM saletransactions[0m
+  [4;36;1mSQL (0.000963)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.194459)[0m   [0mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121033114', 21, '1001', 1)[0m
+  [4;36;1mSQL (0.003822)[0m   [0;1mCOMMIT[0m
+  [4;35;1mItem Load (0.002017)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Load (0.002159)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002160)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mCategory Columns (0.001990)[0m   [0;1mSHOW FIELDS FROM categories[0m
+  [4;35;1mCategory Load (0.006967)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mItem Load (0.002101)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mSQL (0.000402)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000667)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121033114', 21, '2001', 1)[0m
+  [4;35;1mSQL (0.026300)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002042)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002259)[0m   [0mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;36;1mItem Load (0.001990)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000989)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mSQL (0.000974)[0m   [0;1mSELECT sum(total) AS sum_total FROM saletransactions WHERE (idsale = 200711121033114) [0m
+  [4;35;1mSale Columns (0.002106)[0m   [0mSHOW FIELDS FROM sales[0m
+  [4;36;1mSQL (0.000693)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.036157)[0m   [0mINSERT INTO sales (`total`, `idsale`) VALUES(26.0, '200711121033114')[0m
+  [4;36;1mSQL (0.003427)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCashpayment Columns (0.002137)[0m   [0mSHOW FIELDS FROM cashpayments[0m
+  [4;36;1mSQL (0.000617)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000702)[0m   [0mINSERT INTO cashpayments (`id`, `amount`, `clientid`) VALUES('200711121033114', 26.0, 1)[0m
+  [4;36;1mSQL (0.001066)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSaletransaction Load (0.001760)[0m   [0mSELECT * FROM saletransactions WHERE (idsale ='200711121033114') [0m
+  [4;36;1mClient Load (0.001329)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001294)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001594)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001315)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mSQL (0.000407)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.001926)[0m   [0mSELECT * FROM users WHERE (name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Columns (0.003157)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUemployee Load (0.001269)[0m   [0mSELECT * FROM uemployees WHERE (id = 18) LIMIT 1[0m
+  [4;36;1mUemployee Columns (0.002101)[0m   [0;1mSHOW FIELDS FROM uemployees[0m
+  [4;35;1mEmployee Columns (0.002419)[0m   [0mSHOW FIELDS FROM employees[0m
+  [4;36;1mEmployee Load (0.001312)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mClient Columns (0.008792)[0m   [0mSHOW FIELDS FROM clients[0m
+  [4;36;1mClient Load (0.003548)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001984)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.009665)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.003745)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.003289)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.004859)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.002212)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.004465)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Load (0.001540)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mItem Load (0.001936)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Columns (0.003746)[0m   [0;1mSHOW FIELDS FROM items[0m
+  [4;35;1mSaletransaction Columns (0.003004)[0m   [0mSHOW FIELDS FROM saletransactions[0m
+  [4;36;1mSQL (0.000380)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000801)[0m   [0mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121034437', 21, '1001', 1)[0m
+  [4;36;1mSQL (0.005300)[0m   [0;1mCOMMIT[0m
+  [4;35;1mItem Load (0.001996)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Load (0.002225)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002145)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mCategory Columns (0.002178)[0m   [0;1mSHOW FIELDS FROM categories[0m
+  [4;35;1mCategory Load (0.001025)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mItem Load (0.002199)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mSQL (0.000400)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000703)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121034437', 21, '2001', 1)[0m
+  [4;35;1mSQL (0.001900)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002367)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002187)[0m   [0mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;36;1mItem Load (0.001969)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000986)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mSQL (0.001061)[0m   [0;1mSELECT sum(total) AS sum_total FROM saletransactions WHERE (idsale = 200711121034437) [0m
+  [4;35;1mSale Columns (0.002132)[0m   [0mSHOW FIELDS FROM sales[0m
+  [4;36;1mSQL (0.000593)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000972)[0m   [0mINSERT INTO sales (`total`, `idsale`) VALUES(26.0, '200711121034437')[0m
+  [4;36;1mSQL (0.004044)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCashpayment Columns (0.002149)[0m   [0mSHOW FIELDS FROM cashpayments[0m
+  [4;36;1mSQL (0.000928)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.001154)[0m   [0mINSERT INTO cashpayments (`id`, `amount`, `clientid`) VALUES('200711121034437', 26.0, 1)[0m
+  [4;36;1mSQL (0.000902)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSaletransaction Load (0.001681)[0m   [0mSELECT * FROM saletransactions WHERE (idsale = '200711121034437') [0m
+  [4;36;1mClient Load (0.001452)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001344)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001279)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001634)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mSQL (0.000412)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.001724)[0m   [0mSELECT * FROM users WHERE (name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Columns (0.002991)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUemployee Load (0.000957)[0m   [0mSELECT * FROM uemployees WHERE (id = 18) LIMIT 1[0m
+  [4;36;1mUemployee Columns (0.003339)[0m   [0;1mSHOW FIELDS FROM uemployees[0m
+  [4;35;1mEmployee Columns (0.002486)[0m   [0mSHOW FIELDS FROM employees[0m
+  [4;36;1mEmployee Load (0.002551)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mClient Columns (0.092389)[0m   [0mSHOW FIELDS FROM clients[0m
+  [4;36;1mClient Load (0.001570)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001320)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001594)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001303)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.002162)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001328)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001333)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001307)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Load (0.001179)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mItem Load (0.001947)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Columns (0.004884)[0m   [0;1mSHOW FIELDS FROM items[0m
+  [4;35;1mSaletransaction Columns (0.003161)[0m   [0mSHOW FIELDS FROM saletransactions[0m
+  [4;36;1mSQL (0.000609)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000814)[0m   [0mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121038375', 21, '1001', 1)[0m
+  [4;36;1mSQL (0.028740)[0m   [0;1mCOMMIT[0m
+  [4;35;1mItem Load (0.002022)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Load (0.002150)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mItem Load (0.001933)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mCategory Columns (0.002172)[0m   [0;1mSHOW FIELDS FROM categories[0m
+  [4;35;1mCategory Load (0.001184)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mItem Load (0.002029)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mSQL (0.000388)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000658)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121038375', 21, '2001', 1)[0m
+  [4;35;1mSQL (0.000886)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002138)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002010)[0m   [0mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;36;1mItem Load (0.002018)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mCategory Load (0.001079)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mSQL (0.001490)[0m   [0;1mSELECT sum(total) AS sum_total FROM saletransactions WHERE (idsale = 200711121038375) [0m
+  [4;35;1mSale Columns (0.002169)[0m   [0mSHOW FIELDS FROM sales[0m
+  [4;36;1mSQL (0.000683)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.001339)[0m   [0mINSERT INTO sales (`total`, `idsale`) VALUES(26.0, '200711121038375')[0m
+  [4;36;1mSQL (0.002947)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCashpayment Columns (0.002147)[0m   [0mSHOW FIELDS FROM cashpayments[0m
+  [4;36;1mSQL (0.001097)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.001034)[0m   [0mINSERT INTO cashpayments (`id`, `amount`, `clientid`) VALUES('200711121038375', 26.0, 1)[0m
+  [4;36;1mSQL (0.000944)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSaletransaction Load (0.001696)[0m   [0mSELECT * FROM saletransactions WHERE (idsale = '200711121038375') [0m
+  [4;36;1mClient Load (0.001859)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001259)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001319)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001356)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mSQL (0.000393)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.001684)[0m   [0mSELECT * FROM users WHERE (name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Columns (0.002954)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUemployee Load (0.000962)[0m   [0mSELECT * FROM uemployees WHERE (id = 18) LIMIT 1[0m
+  [4;36;1mUemployee Columns (0.001891)[0m   [0;1mSHOW FIELDS FROM uemployees[0m
+  [4;35;1mEmployee Columns (0.002335)[0m   [0mSHOW FIELDS FROM employees[0m
+  [4;36;1mEmployee Load (0.001801)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mClient Columns (0.040465)[0m   [0mSHOW FIELDS FROM clients[0m
+  [4;36;1mClient Load (0.001724)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001316)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001532)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.060508)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001367)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001425)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001270)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001246)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Load (0.001217)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mItem Load (0.001868)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Columns (0.003486)[0m   [0;1mSHOW FIELDS FROM items[0m
+  [4;35;1mSaletransaction Columns (0.003139)[0m   [0mSHOW FIELDS FROM saletransactions[0m
+  [4;36;1mSQL (0.000610)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.001297)[0m   [0mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121041093', 21, '1001', 1)[0m
+  [4;36;1mSQL (0.004646)[0m   [0;1mCOMMIT[0m
+  [4;35;1mItem Load (0.002069)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Load (0.001927)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002076)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mCategory Columns (0.002057)[0m   [0;1mSHOW FIELDS FROM categories[0m
+  [4;35;1mCategory Load (0.001223)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mItem Load (0.002157)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mSQL (0.000570)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000651)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121041093', 21, '2001', 1)[0m
+  [4;35;1mSQL (0.001974)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.001924)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002011)[0m   [0mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;36;1mItem Load (0.001984)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mCategory Load (0.001202)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mItem Load (0.002047)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mSQL (0.000608)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000647)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 12.0, 12.0, '200711121041093', 21, '213', 1)[0m
+  [4;35;1mSQL (0.001977)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.001936)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mItem Load (0.002333)[0m   [0mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;36;1mItem Load (0.001950)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mCategory Load (0.001634)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 1) [0m
+  [4;36;1mItem Load (0.002278)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.000381)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000643)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 0.017, 0.017, '200711121041093', 21, '1', 1)[0m
+  [4;35;1mSQL (0.001662)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002083)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+  [4;35;1mItem Load (0.001986)[0m   [0mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+  [4;36;1mItem Load (0.002182)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+  [4;35;1mCategory Load (0.001780)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 3) [0m
+  [4;36;1mItem Load (0.002069)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+  [4;35;1mItem Load (0.002052)[0m   [0mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+  [4;36;1mSaletransaction Load (0.001997)[0m   [0;1mSELECT * FROM saletransactions WHERE (saletransactions.`id` = 15) [0m
+  [4;35;1mSaletransaction Update (0.005190)[0m   [0mUPDATE saletransactions SET `item` = '1', `cashierid` = 21, `price` = 0.017, `total` = 12.75, `clientid` = 1, `idsale` = '200711121041093', `qty` = '750.0' WHERE `id` = 15[0m
+  [4;36;1mItem Load (0.002258)[0m   [0;1mSELECT * FROM items WHERE (barcode = '23') LIMIT 1[0m
+  [4;35;1mSQL (0.000369)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000678)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 0.075, 0.075, '200711121041093', 21, '23', 1)[0m
+  [4;35;1mSQL (0.001583)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002088)[0m   [0;1mSELECT * FROM items WHERE (barcode = '23') LIMIT 1[0m
+  [4;35;1mItem Load (0.002283)[0m   [0mSELECT * FROM items WHERE (barcode = '23') LIMIT 1[0m
+  [4;36;1mItem Load (0.002118)[0m   [0;1mSELECT * FROM items WHERE (barcode = '23') LIMIT 1[0m
+  [4;35;1mCategory Load (0.001006)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 3) [0m
+  [4;36;1mItem Load (0.025362)[0m   [0;1mSELECT * FROM items WHERE (barcode = '23') LIMIT 1[0m
+  [4;35;1mItem Load (0.002060)[0m   [0mSELECT * FROM items WHERE (barcode = '23') LIMIT 1[0m
+  [4;36;1mSaletransaction Load (0.001877)[0m   [0;1mSELECT * FROM saletransactions WHERE (saletransactions.`id` = 16) [0m
+  [4;35;1mSaletransaction Update (0.198094)[0m   [0mUPDATE saletransactions SET `item` = '23', `cashierid` = 21, `price` = 0.075, `total` = 23.0, `clientid` = 1, `idsale` = '200711121041093', `qty` = '306.666666666667' WHERE `id` = 16[0m
+  [4;36;1mSQL (0.001762)[0m   [0;1mSELECT sum(total) AS sum_total FROM saletransactions WHERE (idsale = 200711121041093) [0m
+  [4;35;1mSale Columns (0.002990)[0m   [0mSHOW FIELDS FROM sales[0m
+  [4;36;1mSQL (0.000608)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000952)[0m   [0mINSERT INTO sales (`total`, `idsale`) VALUES(73.75, '200711121041093')[0m
+  [4;36;1mSQL (0.034705)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCashpayment Columns (0.002155)[0m   [0mSHOW FIELDS FROM cashpayments[0m
+  [4;36;1mSQL (0.000944)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000673)[0m   [0mINSERT INTO cashpayments (`id`, `amount`, `clientid`) VALUES('200711121041093', 73.75, 1)[0m
+  [4;36;1mSQL (0.000874)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.000508)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.001862)[0m   [0mSELECT * FROM users WHERE (name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Columns (0.002845)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUemployee Load (0.000979)[0m   [0mSELECT * FROM uemployees WHERE (id = 18) LIMIT 1[0m
+  [4;36;1mUemployee Columns (0.002104)[0m   [0;1mSHOW FIELDS FROM uemployees[0m
+  [4;35;1mEmployee Columns (0.002704)[0m   [0mSHOW FIELDS FROM employees[0m
+  [4;36;1mEmployee Load (0.001207)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mClient Columns (0.010680)[0m   [0mSHOW FIELDS FROM clients[0m
+  [4;36;1mClient Load (0.002437)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.002949)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001676)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.002696)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.003200)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.003462)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.013133)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.002659)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Load (0.002178)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mItem Load (0.002635)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Columns (0.003349)[0m   [0;1mSHOW FIELDS FROM items[0m
+  [4;35;1mSaletransaction Columns (0.002979)[0m   [0mSHOW FIELDS FROM saletransactions[0m
+  [4;36;1mSQL (0.000390)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000713)[0m   [0mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121043417', 21, '1001', 1)[0m
+  [4;36;1mSQL (0.002683)[0m   [0;1mCOMMIT[0m
+  [4;35;1mItem Load (0.002017)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Load (0.002101)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mItem Load (0.001989)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mCategory Columns (0.002282)[0m   [0;1mSHOW FIELDS FROM categories[0m
+  [4;35;1mCategory Load (0.001011)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mSQL (0.001029)[0m   [0;1mSELECT sum(total) AS sum_total FROM saletransactions WHERE (idsale = 200711121043417) [0m
+  [4;35;1mSale Columns (0.002541)[0m   [0mSHOW FIELDS FROM sales[0m
+  [4;36;1mSQL (0.001040)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.001046)[0m   [0mINSERT INTO sales (`total`, `idsale`) VALUES(13.0, '200711121043417')[0m
+  [4;36;1mSQL (0.002023)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCashpayment Columns (0.002504)[0m   [0mSHOW FIELDS FROM cashpayments[0m
+  [4;36;1mSQL (0.000924)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000832)[0m   [0mINSERT INTO cashpayments (`id`, `amount`, `clientid`) VALUES('200711121043417', 13.0, 1)[0m
+  [4;36;1mSQL (0.000845)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.000404)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.001733)[0m   [0mSELECT * FROM users WHERE (name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Columns (0.002920)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUemployee Load (0.001891)[0m   [0mSELECT * FROM uemployees WHERE (id = 18) LIMIT 1[0m
+  [4;36;1mUemployee Columns (0.002146)[0m   [0;1mSHOW FIELDS FROM uemployees[0m
+  [4;35;1mEmployee Columns (0.002452)[0m   [0mSHOW FIELDS FROM employees[0m
+  [4;36;1mEmployee Load (0.001314)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mClient Columns (0.003622)[0m   [0mSHOW FIELDS FROM clients[0m
+  [4;36;1mClient Load (0.005972)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.007176)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.005208)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.002772)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001545)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001254)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001283)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001280)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Load (0.001178)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mItem Load (0.001946)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Columns (0.003282)[0m   [0;1mSHOW FIELDS FROM items[0m
+  [4;35;1mSaletransaction Columns (0.003242)[0m   [0mSHOW FIELDS FROM saletransactions[0m
+  [4;36;1mSQL (0.000884)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000671)[0m   [0mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121045106', 21, '1001', 1)[0m
+  [4;36;1mSQL (0.006151)[0m   [0;1mCOMMIT[0m
+  [4;35;1mItem Load (0.001968)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Load (0.002772)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002013)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mCategory Columns (0.001978)[0m   [0;1mSHOW FIELDS FROM categories[0m
+  [4;35;1mCategory Load (0.001347)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mSQL (0.001473)[0m   [0;1mSELECT sum(total) AS sum_total FROM saletransactions WHERE (idsale = 200711121045106) [0m
+  [4;35;1mSale Columns (0.002130)[0m   [0mSHOW FIELDS FROM sales[0m
+  [4;36;1mSQL (0.000656)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000957)[0m   [0mINSERT INTO sales (`total`, `idsale`) VALUES(13.0, '200711121045106')[0m
+  [4;36;1mSQL (0.002501)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCashpayment Columns (0.002126)[0m   [0mSHOW FIELDS FROM cashpayments[0m
+  [4;36;1mSQL (0.000631)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000764)[0m   [0mINSERT INTO cashpayments (`id`, `amount`, `clientid`) VALUES('200711121045106', 13.0, 1)[0m
+  [4;36;1mSQL (0.000916)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.000438)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.001848)[0m   [0mSELECT * FROM users WHERE (name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Columns (0.026984)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUemployee Load (0.000948)[0m   [0mSELECT * FROM uemployees WHERE (id = 18) LIMIT 1[0m
+  [4;36;1mUemployee Columns (0.002079)[0m   [0;1mSHOW FIELDS FROM uemployees[0m
+  [4;35;1mEmployee Columns (0.002413)[0m   [0mSHOW FIELDS FROM employees[0m
+  [4;36;1mEmployee Load (0.001554)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mClient Columns (0.069610)[0m   [0mSHOW FIELDS FROM clients[0m
+  [4;36;1mClient Load (0.001539)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001632)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001334)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001290)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.002081)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001259)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001251)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001248)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Load (0.001531)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mItem Load (0.002342)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Columns (0.003649)[0m   [0;1mSHOW FIELDS FROM items[0m
+  [4;35;1mSaletransaction Columns (0.003131)[0m   [0mSHOW FIELDS FROM saletransactions[0m
+  [4;36;1mSQL (0.000389)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.001408)[0m   [0mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121046352', 21, '1001', 1)[0m
+  [4;36;1mSQL (0.003819)[0m   [0;1mCOMMIT[0m
+  [4;35;1mItem Load (0.002043)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Load (0.002143)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mItem Load (0.001985)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mCategory Columns (0.002178)[0m   [0;1mSHOW FIELDS FROM categories[0m
+  [4;35;1mCategory Load (0.001002)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mSQL (0.001231)[0m   [0;1mSELECT sum(total) AS sum_total FROM saletransactions WHERE (idsale = 200711121046352) [0m
+  [4;35;1mSale Columns (0.002447)[0m   [0mSHOW FIELDS FROM sales[0m
+  [4;36;1mSQL (0.000388)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000687)[0m   [0mINSERT INTO sales (`total`, `idsale`) VALUES(13.0, '200711121046352')[0m
+  [4;36;1mSQL (0.001980)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCashpayment Columns (0.002437)[0m   [0mSHOW FIELDS FROM cashpayments[0m
+  [4;36;1mSQL (0.000620)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000725)[0m   [0mINSERT INTO cashpayments (`id`, `amount`, `clientid`) VALUES('200711121046352', 13.0, 1)[0m
+  [4;36;1mSQL (0.000825)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.000416)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.001884)[0m   [0mSELECT * FROM users WHERE (name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Columns (0.003227)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUemployee Load (0.000980)[0m   [0mSELECT * FROM uemployees WHERE (id = 18) LIMIT 1[0m
+  [4;36;1mUemployee Columns (0.002141)[0m   [0;1mSHOW FIELDS FROM uemployees[0m
+  [4;35;1mEmployee Columns (0.002344)[0m   [0mSHOW FIELDS FROM employees[0m
+  [4;36;1mEmployee Load (0.001521)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mClient Columns (0.021497)[0m   [0mSHOW FIELDS FROM clients[0m
+  [4;36;1mClient Load (0.001439)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001289)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001763)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001271)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.003610)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.003893)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.003188)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.002274)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Load (0.003055)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mItem Load (0.001901)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Columns (0.015013)[0m   [0;1mSHOW FIELDS FROM items[0m
+  [4;35;1mSaletransaction Columns (0.003115)[0m   [0mSHOW FIELDS FROM saletransactions[0m
+  [4;36;1mSQL (0.000380)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000698)[0m   [0mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121048205', 21, '1001', 1)[0m
+  [4;36;1mSQL (0.003151)[0m   [0;1mCOMMIT[0m
+  [4;35;1mItem Load (0.002014)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Load (0.002016)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mItem Load (0.001945)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mCategory Columns (0.002167)[0m   [0;1mSHOW FIELDS FROM categories[0m
+  [4;35;1mCategory Load (0.001527)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mItem Load (0.002194)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mSQL (0.000371)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000690)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121048205', 21, '2001', 1)[0m
+  [4;35;1mSQL (0.001910)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.001989)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002330)[0m   [0mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;36;1mItem Load (0.002090)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000967)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mItem Load (0.002121)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mSQL (0.000552)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000767)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 12.0, 12.0, '200711121048205', 21, '213', 1)[0m
+  [4;35;1mSQL (0.001718)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.001971)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mItem Load (0.002040)[0m   [0mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;36;1mItem Load (0.002190)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000985)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 1) [0m
+  [4;36;1mItem Load (0.001986)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.000367)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000813)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 0.017, 0.017, '200711121048205', 21, '1', 1)[0m
+  [4;35;1mSQL (0.027423)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002044)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+  [4;35;1mItem Load (0.002325)[0m   [0mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+  [4;36;1mItem Load (0.001976)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000983)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 3) [0m
+  [4;36;1mItem Load (0.002056)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+  [4;35;1mItem Load (0.002119)[0m   [0mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+  [4;36;1mSaletransaction Load (0.002054)[0m   [0;1mSELECT * FROM saletransactions WHERE (saletransactions.`id` = 23) [0m
+  [4;35;1mSaletransaction Update (0.005227)[0m   [0mUPDATE saletransactions SET `item` = '1', `cashierid` = 21, `price` = 0.017, `total` = 12.75, `clientid` = 1, `idsale` = '200711121048205', `qty` = '750.0' WHERE `id` = 23[0m
+  [4;36;1mItem Load (0.002138)[0m   [0;1mSELECT * FROM items WHERE (barcode = '23') LIMIT 1[0m
+  [4;35;1mSQL (0.000411)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000678)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 0.075, 0.075, '200711121048205', 21, '23', 1)[0m
+  [4;35;1mSQL (0.001633)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002069)[0m   [0;1mSELECT * FROM items WHERE (barcode = '23') LIMIT 1[0m
+  [4;35;1mItem Load (0.002070)[0m   [0mSELECT * FROM items WHERE (barcode = '23') LIMIT 1[0m
+  [4;36;1mItem Load (0.002464)[0m   [0;1mSELECT * FROM items WHERE (barcode = '23') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000973)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 3) [0m
+  [4;36;1mItem Load (0.002170)[0m   [0;1mSELECT * FROM items WHERE (barcode = '23') LIMIT 1[0m
+  [4;35;1mItem Load (0.002133)[0m   [0mSELECT * FROM items WHERE (barcode = '23') LIMIT 1[0m
+  [4;36;1mSaletransaction Load (0.001841)[0m   [0;1mSELECT * FROM saletransactions WHERE (saletransactions.`id` = 24) [0m
+  [4;35;1mSaletransaction Update (0.006038)[0m   [0mUPDATE saletransactions SET `item` = '23', `cashierid` = 21, `price` = 0.075, `total` = 1.875, `clientid` = 1, `idsale` = '200711121048205', `qty` = '25.0' WHERE `id` = 24[0m
+  [4;36;1mSQL (0.001158)[0m   [0;1mSELECT sum(total) AS sum_total FROM saletransactions WHERE (idsale = 200711121048205) [0m
+  [4;35;1mSale Columns (0.002710)[0m   [0mSHOW FIELDS FROM sales[0m
+  [4;36;1mSQL (0.000381)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000652)[0m   [0mINSERT INTO sales (`total`, `idsale`) VALUES(52.625, '200711121048205')[0m
+  [4;36;1mSQL (0.003931)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCashpayment Columns (0.002332)[0m   [0mSHOW FIELDS FROM cashpayments[0m
+  [4;36;1mSQL (0.000603)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000638)[0m   [0mINSERT INTO cashpayments (`id`, `amount`, `clientid`) VALUES('200711121048205', 52.625, 1)[0m
+  [4;36;1mSQL (0.000863)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSaletransaction Load (0.001984)[0m   [0mSELECT * FROM saletransactions WHERE (idsale = '200711121048205') [0m
+  [4;36;1mClient Load (0.001256)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001241)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001318)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001359)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mSQL (0.000397)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.001726)[0m   [0mSELECT * FROM users WHERE (name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Columns (0.003052)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUemployee Load (0.000972)[0m   [0mSELECT * FROM uemployees WHERE (id = 18) LIMIT 1[0m
+  [4;36;1mUemployee Columns (0.001946)[0m   [0;1mSHOW FIELDS FROM uemployees[0m
+  [4;35;1mEmployee Columns (0.003239)[0m   [0mSHOW FIELDS FROM employees[0m
+  [4;36;1mEmployee Load (0.001435)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mClient Columns (0.098929)[0m   [0mSHOW FIELDS FROM clients[0m
+  [4;36;1mClient Load (0.001847)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001264)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001253)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001387)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001998)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001421)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001314)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001555)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Load (0.001489)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mItem Load (0.002041)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Columns (0.003428)[0m   [0;1mSHOW FIELDS FROM items[0m
+  [4;35;1mSaletransaction Columns (0.003127)[0m   [0mSHOW FIELDS FROM saletransactions[0m
+  [4;36;1mSQL (0.000385)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000707)[0m   [0mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121050038', 21, '1001', 1)[0m
+  [4;36;1mSQL (0.004679)[0m   [0;1mCOMMIT[0m
+  [4;35;1mItem Load (0.002084)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Load (0.002175)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002631)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mCategory Columns (0.002144)[0m   [0;1mSHOW FIELDS FROM categories[0m
+  [4;35;1mCategory Load (0.001744)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mItem Load (0.002248)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mSQL (0.000383)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000687)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121050038', 21, '2001', 1)[0m
+  [4;35;1mSQL (0.001972)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002351)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002122)[0m   [0mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;36;1mItem Load (0.002224)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mCategory Load (0.001004)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mItem Load (0.002192)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mSQL (0.000828)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000693)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 12.0, 12.0, '200711121050038', 21, '213', 1)[0m
+  [4;35;1mSQL (0.001727)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002048)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mItem Load (0.002166)[0m   [0mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;36;1mItem Load (0.002198)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mCategory Load (0.001077)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 1) [0m
+  [4;36;1mSQL (0.001141)[0m   [0;1mSELECT sum(total) AS sum_total FROM saletransactions WHERE (idsale = 200711121050038) [0m
+  [4;35;1mSale Columns (0.002559)[0m   [0mSHOW FIELDS FROM sales[0m
+  [4;36;1mSQL (0.000379)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000667)[0m   [0mINSERT INTO sales (`total`, `idsale`) VALUES(38.0, '200711121050038')[0m
+  [4;36;1mSQL (0.004661)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCashpayment Columns (0.002599)[0m   [0mSHOW FIELDS FROM cashpayments[0m
+  [4;36;1mSQL (0.000602)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000649)[0m   [0mINSERT INTO cashpayments (`id`, `amount`, `clientid`) VALUES('200711121050038', 38.0, 1)[0m
+  [4;36;1mSQL (0.000974)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSaletransaction Load (0.002046)[0m   [0mSELECT * FROM saletransactions WHERE (idsale = '200711121050038') [0m
+  [4;36;1mClient Load (0.001353)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001456)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001245)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001300)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mSQL (0.000588)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.001685)[0m   [0mSELECT * FROM users WHERE (name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Columns (0.002850)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUemployee Load (0.000959)[0m   [0mSELECT * FROM uemployees WHERE (id = 18) LIMIT 1[0m
+  [4;36;1mUemployee Columns (0.001993)[0m   [0;1mSHOW FIELDS FROM uemployees[0m
+  [4;35;1mEmployee Columns (0.002707)[0m   [0mSHOW FIELDS FROM employees[0m
+  [4;36;1mEmployee Load (0.001374)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mClient Columns (0.041503)[0m   [0mSHOW FIELDS FROM clients[0m
+  [4;36;1mClient Load (0.001958)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001337)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001289)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001312)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001882)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001331)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001716)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001533)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Load (0.001174)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mItem Load (0.001912)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Columns (0.003913)[0m   [0;1mSHOW FIELDS FROM items[0m
+  [4;35;1mSaletransaction Columns (0.003352)[0m   [0mSHOW FIELDS FROM saletransactions[0m
+  [4;36;1mSQL (0.000587)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000710)[0m   [0mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121053396', 21, '1001', 1)[0m
+  [4;36;1mSQL (0.002736)[0m   [0;1mCOMMIT[0m
+  [4;35;1mItem Load (0.001977)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Load (0.001975)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002330)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mCategory Columns (0.002211)[0m   [0;1mSHOW FIELDS FROM categories[0m
+  [4;35;1mCategory Load (0.001281)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mItem Load (0.002218)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mSQL (0.000445)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000652)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121053396', 21, '2001', 1)[0m
+  [4;35;1mSQL (0.005366)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002038)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mItem Load (0.001977)[0m   [0mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;36;1mItem Load (0.002252)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000979)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mSQL (0.001010)[0m   [0;1mSELECT sum(total) AS sum_total FROM saletransactions WHERE (idsale = 200711121053396) [0m
+  [4;35;1mSale Columns (0.002105)[0m   [0mSHOW FIELDS FROM sales[0m
+  [4;36;1mSQL (0.000922)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000693)[0m   [0mINSERT INTO sales (`total`, `idsale`) VALUES(26.0, '200711121053396')[0m
+  [4;36;1mSQL (0.004278)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCashpayment Columns (0.002175)[0m   [0mSHOW FIELDS FROM cashpayments[0m
+  [4;36;1mSQL (0.000813)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000628)[0m   [0mINSERT INTO cashpayments (`id`, `amount`, `clientid`) VALUES('200711121053396', 26.0, 1)[0m
+  [4;36;1mSQL (0.000876)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSaletransaction Load (0.001695)[0m   [0mSELECT * FROM saletransactions WHERE (idsale = '200711121053396') [0m
+  [4;36;1mClient Load (0.001537)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001314)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001330)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001567)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mSQL (0.000405)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.002286)[0m   [0mSELECT * FROM users WHERE (name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Columns (0.003576)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUemployee Load (0.000913)[0m   [0mSELECT * FROM uemployees WHERE (id = 18) LIMIT 1[0m
+  [4;36;1mUemployee Columns (0.001912)[0m   [0;1mSHOW FIELDS FROM uemployees[0m
+  [4;35;1mEmployee Columns (0.002342)[0m   [0mSHOW FIELDS FROM employees[0m
+  [4;36;1mEmployee Load (0.001533)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mClient Columns (0.002263)[0m   [0mSHOW FIELDS FROM clients[0m
+  [4;36;1mClient Load (0.001574)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001678)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001644)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001286)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001644)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001351)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001975)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001268)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Load (0.001249)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mItem Load (0.002145)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Columns (0.003129)[0m   [0;1mSHOW FIELDS FROM items[0m
+  [4;35;1mSaletransaction Columns (0.003304)[0m   [0mSHOW FIELDS FROM saletransactions[0m
+  [4;36;1mSQL (0.000611)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000954)[0m   [0mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121055216', 21, '1001', 1)[0m
+  [4;36;1mSQL (0.024282)[0m   [0;1mCOMMIT[0m
+  [4;35;1mItem Load (0.001967)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Load (0.002133)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002035)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mCategory Columns (0.002314)[0m   [0;1mSHOW FIELDS FROM categories[0m
+  [4;35;1mCategory Load (0.001244)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mItem Load (0.002032)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mSQL (0.000614)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000830)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121055216', 21, '2001', 1)[0m
+  [4;35;1mSQL (0.005224)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.001963)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mItem Load (0.001998)[0m   [0mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;36;1mItem Load (0.002342)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mCategory Load (0.001025)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mItem Load (0.002150)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mSQL (0.000853)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.001079)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 12.0, 12.0, '200711121055216', 21, '213', 1)[0m
+  [4;35;1mSQL (0.004312)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002016)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mItem Load (0.002797)[0m   [0mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;36;1mItem Load (0.001934)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mCategory Load (0.001080)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 1) [0m
+  [4;36;1mSQL (0.001017)[0m   [0;1mSELECT sum(total) AS sum_total FROM saletransactions WHERE (idsale = 200711121055216) [0m
+  [4;35;1mSale Columns (0.002080)[0m   [0mSHOW FIELDS FROM sales[0m
+  [4;36;1mSQL (0.000599)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000748)[0m   [0mINSERT INTO sales (`total`, `idsale`) VALUES(38.0, '200711121055216')[0m
+  [4;36;1mSQL (0.004537)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCashpayment Columns (0.002137)[0m   [0mSHOW FIELDS FROM cashpayments[0m
+  [4;36;1mSQL (0.000655)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000622)[0m   [0mINSERT INTO cashpayments (`id`, `amount`, `clientid`) VALUES('200711121055216', 38.0, 1)[0m
+  [4;36;1mSQL (0.000917)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSaletransaction Load (0.001896)[0m   [0mSELECT * FROM saletransactions WHERE (idsale = '200711121055216') [0m
+  [4;36;1mClient Load (0.001519)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001276)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001280)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001286)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mSQL (0.000413)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.001689)[0m   [0mSELECT * FROM users WHERE (name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Columns (0.002796)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUemployee Load (0.001264)[0m   [0mSELECT * FROM uemployees WHERE (id = 18) LIMIT 1[0m
+  [4;36;1mUemployee Columns (0.002127)[0m   [0;1mSHOW FIELDS FROM uemployees[0m
+  [4;35;1mEmployee Columns (0.002454)[0m   [0mSHOW FIELDS FROM employees[0m
+  [4;36;1mEmployee Load (0.001152)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mClient Columns (0.020493)[0m   [0mSHOW FIELDS FROM clients[0m
+  [4;36;1mClient Load (0.001354)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001283)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001386)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001247)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.003220)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001570)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.002430)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.005441)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Load (0.002374)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mItem Load (0.002027)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Columns (0.003150)[0m   [0;1mSHOW FIELDS FROM items[0m
+  [4;35;1mSaletransaction Columns (0.043435)[0m   [0mSHOW FIELDS FROM saletransactions[0m
+  [4;36;1mSQL (0.000602)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000673)[0m   [0mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121058165', 21, '1001', 1)[0m
+  [4;36;1mSQL (0.004637)[0m   [0;1mCOMMIT[0m
+  [4;35;1mItem Load (0.002033)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Load (0.002179)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mItem Load (0.001952)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mCategory Columns (0.002009)[0m   [0;1mSHOW FIELDS FROM categories[0m
+  [4;35;1mCategory Load (0.001194)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mItem Load (0.002233)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mSQL (0.000411)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000830)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121058165', 21, '2001', 1)[0m
+  [4;35;1mSQL (0.002025)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002041)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002006)[0m   [0mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;36;1mItem Load (0.002010)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mCategory Load (0.001300)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mItem Load (0.002423)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mSQL (0.000635)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000674)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 12.0, 12.0, '200711121058165', 21, '213', 1)[0m
+  [4;35;1mSQL (0.028614)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002004)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mItem Load (0.001973)[0m   [0mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;36;1mItem Load (0.002082)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000976)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 1) [0m
+  [4;36;1mSQL (0.001057)[0m   [0;1mSELECT sum(total) AS sum_total FROM saletransactions WHERE (idsale = 200711121058165) [0m
+  [4;35;1mSale Columns (0.002484)[0m   [0mSHOW FIELDS FROM sales[0m
+  [4;36;1mSQL (0.000369)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000657)[0m   [0mINSERT INTO sales (`total`, `idsale`) VALUES(38.0, '200711121058165')[0m
+  [4;36;1mSQL (0.004383)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCashpayment Columns (0.002741)[0m   [0mSHOW FIELDS FROM cashpayments[0m
+  [4;36;1mSQL (0.000377)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000636)[0m   [0mINSERT INTO cashpayments (`id`, `amount`, `clientid`) VALUES('200711121058165', 38.0, 1)[0m
+  [4;36;1mSQL (0.000856)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSaletransaction Load (0.001938)[0m   [0mSELECT * FROM saletransactions WHERE (idsale = '200711121058165') [0m
+  [4;36;1mClient Load (0.001333)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001357)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001809)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001481)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mSQL (0.000413)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.001722)[0m   [0mSELECT * FROM users WHERE (name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Columns (0.002764)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUemployee Load (0.000966)[0m   [0mSELECT * FROM uemployees WHERE (id = 18) LIMIT 1[0m
+  [4;36;1mUemployee Columns (0.002073)[0m   [0;1mSHOW FIELDS FROM uemployees[0m
+  [4;35;1mEmployee Columns (0.002758)[0m   [0mSHOW FIELDS FROM employees[0m
+  [4;36;1mEmployee Load (0.001292)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mClient Columns (0.033421)[0m   [0mSHOW FIELDS FROM clients[0m
+  [4;36;1mClient Load (0.001484)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001525)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001315)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001343)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001319)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001331)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001325)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001742)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Load (0.001222)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mItem Load (0.002430)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Columns (0.003477)[0m   [0;1mSHOW FIELDS FROM items[0m
+  [4;35;1mSaletransaction Columns (0.002881)[0m   [0mSHOW FIELDS FROM saletransactions[0m
+  [4;36;1mSQL (0.000618)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000705)[0m   [0mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121059572', 21, '1001', 1)[0m
+  [4;36;1mSQL (0.004179)[0m   [0;1mCOMMIT[0m
+  [4;35;1mItem Load (0.002098)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Load (0.001993)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mItem Load (0.001995)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mCategory Columns (0.003220)[0m   [0;1mSHOW FIELDS FROM categories[0m
+  [4;35;1mCategory Load (0.001032)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mItem Load (0.002053)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mSQL (0.000748)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.001045)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 12.0, 12.0, '200711121059572', 21, '213', 1)[0m
+  [4;35;1mSQL (0.002038)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002014)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mItem Load (0.002155)[0m   [0mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;36;1mItem Load (0.002184)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mCategory Load (0.001012)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 1) [0m
+  [4;36;1mItem Load (0.002148)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mSQL (0.000523)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000703)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121059572', 21, '2001', 1)[0m
+  [4;35;1mSQL (0.001786)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002007)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002361)[0m   [0mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;36;1mItem Load (0.002139)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mCategory Load (0.001210)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mSQL (0.001262)[0m   [0;1mSELECT sum(total) AS sum_total FROM saletransactions WHERE (idsale = 200711121059572) [0m
+  [4;35;1mSale Columns (0.002501)[0m   [0mSHOW FIELDS FROM sales[0m
+  [4;36;1mSQL (0.000646)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000956)[0m   [0mINSERT INTO sales (`total`, `idsale`) VALUES(38.0, '200711121059572')[0m
+  [4;36;1mSQL (0.002652)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCashpayment Columns (0.002617)[0m   [0mSHOW FIELDS FROM cashpayments[0m
+  [4;36;1mSQL (0.000649)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.001048)[0m   [0mINSERT INTO cashpayments (`id`, `amount`, `clientid`) VALUES('200711121059572', 38.0, 1)[0m
+  [4;36;1mSQL (0.001383)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSaletransaction Load (0.001813)[0m   [0mSELECT * FROM saletransactions WHERE (idsale = '200711121059572') [0m
+  [4;36;1mClient Load (0.167612)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001459)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001416)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001421)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mSQL (0.000397)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.001743)[0m   [0mSELECT * FROM users WHERE (name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Columns (0.003011)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUemployee Load (0.001009)[0m   [0mSELECT * FROM uemployees WHERE (id = 18) LIMIT 1[0m
+  [4;36;1mUemployee Columns (0.002161)[0m   [0;1mSHOW FIELDS FROM uemployees[0m
+  [4;35;1mEmployee Columns (0.002359)[0m   [0mSHOW FIELDS FROM employees[0m
+  [4;36;1mEmployee Load (0.001524)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mClient Columns (0.013818)[0m   [0mSHOW FIELDS FROM clients[0m
+  [4;36;1mClient Load (0.019324)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.009698)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.027466)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.002072)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.006245)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.006266)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.004681)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.002159)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Load (0.005729)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mItem Load (0.002374)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Columns (0.003325)[0m   [0;1mSHOW FIELDS FROM items[0m
+  [4;35;1mSaletransaction Columns (0.003167)[0m   [0mSHOW FIELDS FROM saletransactions[0m
+  [4;36;1mSQL (0.000378)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.001054)[0m   [0mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121102201', 21, '1001', 1)[0m
+  [4;36;1mSQL (0.005248)[0m   [0;1mCOMMIT[0m
+  [4;35;1mItem Load (0.002064)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Load (0.001969)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mItem Load (0.001985)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mCategory Columns (0.002161)[0m   [0;1mSHOW FIELDS FROM categories[0m
+  [4;35;1mCategory Load (0.001034)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mItem Load (0.002110)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mSQL (0.000438)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000798)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 13.0, 13.0, '200711121102201', 21, '2001', 1)[0m
+  [4;35;1mSQL (0.002777)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002141)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002281)[0m   [0mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;36;1mItem Load (0.002536)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000996)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 2) [0m
+  [4;36;1mItem Load (0.002180)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mSQL (0.000535)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000684)[0m   [0;1mINSERT INTO saletransactions (`qty`, `price`, `total`, `idsale`, `cashierid`, `item`, `clientid`) VALUES('1.0', 12.0, 12.0, '200711121102201', 21, '213', 1)[0m
+  [4;35;1mSQL (0.001691)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Load (0.002109)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mItem Load (0.001966)[0m   [0mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;36;1mItem Load (0.002155)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mCategory Load (0.001016)[0m   [0mSELECT * FROM categories WHERE (categories.`id` = 1) [0m
+  [4;36;1mSQL (0.061653)[0m   [0;1mSELECT sum(total) AS sum_total FROM saletransactions WHERE (idsale = 200711121102201) [0m
+  [4;35;1mSale Columns (0.002162)[0m   [0mSHOW FIELDS FROM sales[0m
+  [4;36;1mSQL (0.001370)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000853)[0m   [0mINSERT INTO sales (`total`, `idsale`) VALUES(38.0, '200711121102201')[0m
+  [4;36;1mSQL (0.097862)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCashpayment Columns (0.002135)[0m   [0mSHOW FIELDS FROM cashpayments[0m
+  [4;36;1mSQL (0.000597)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.001352)[0m   [0mINSERT INTO cashpayments (`id`, `amount`, `clientid`) VALUES('200711121102201', 38.0, 1)[0m
+  [4;36;1mSQL (0.098583)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSaletransaction Load (0.001957)[0m   [0mSELECT * FROM saletransactions WHERE (idsale = '200711121102201') [0m
+  [4;36;1mClient Load (0.334877)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001492)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mClient Load (0.001344)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mClient Load (0.001536)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m

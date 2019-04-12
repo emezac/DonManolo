@@ -1,0 +1,37 @@
+<%= error_messages_for 'item' %>
+
+<!--[form:item]-->
+<p><label for="item_barcode">Barcode</label><br/>
+<%= text_field 'item', 'barcode'  %></p>
+
+<p><label for="item_description">Description</label><br/>
+<%= text_field 'item', 'description'  %></p>
+
+<p><label for="item_price">Price</label><br/>
+<%= text_field 'item', 'price'  %></p>
+
+<p><label for="item_cost_price">Cost price</label><br/>
+<%= text_field 'item', 'cost_price'  %></p>
+
+<p><label for="item_qty">Qty</label><br/>
+<%= text_field 'item', 'qty'  %></p>
+
+<p><label for="item_minimum_stock">Minimum stock</label><br/>
+<%= text_field 'item', 'minimum_stock'  %></p>
+
+<p><label for="item_category_id">Category</label><br/>
+<%= select("item", "category_id", Category.find(:all).collect {|c| [c.name, c.id] }) %></p>
+
+<p><label for="item_wmsystem_id">Ware House Management System</label><br/>
+<%= select("item", "wmsystem_id", Wmsystem.find(:all).collect {|w| [w.name, w.id] }) %></p>
+
+
+<p><label for="item_expiration_date">Expiration date</label><br/>
+<%= datetime_select 'item', 'expiration_date'  %></p>
+
+
+<p><label for="item_notes">Notes</label><br/>
+<%= text_field 'item', 'notes'  %></p>
+
+<!--[eoform:item]-->
+

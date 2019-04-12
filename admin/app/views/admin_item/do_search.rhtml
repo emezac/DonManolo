@@ -1,0 +1,51 @@
+<center><h3>Items</h3></center>
+<table border=1 cellpadding="5" cellspacing="0">
+
+<% if @items.empty? %>
+  '<%=h @phrase %>' not found!
+<% else %>
+  '<%=h @phrase %>' found <b><%= @number_match %></b> time(s)!
+<br>
+<br>
+<% 
+odd_or_even = 0
+for item in @items 
+  odd_or_even = 1 - odd_or_even 
+%>
+  <tr valign="top" class="ListLine<%= odd_or_even %>">
+
+    <td >
+      <strong><span class="ListTitle"><%= h(item.barcode) %></span></strong> |
+      <%= h(truncate(item.description, 80)) %>
+    </td>
+
+    <td  align="left">
+      <span class="ListTitle">Price: <%= h(item.price) %></span><br />
+      Cost price: <%= h(item.cost_price) %>
+    </td>
+
+    <td  align="left">
+      <span class="ListTitle">Qty: <%= h(item.qty) %></span><br />
+      Minimum stock: <%= h(item.minimum_stock) %>
+    </td>
+
+    <td  align="right">
+      <%= Category.find(item.category_id).name %>
+    </td>
+
+    <td align="right">
+      <%= Wmsystem.find(item.wmsystem_id).name %><br/>
+      <font size:1>Expires on: <strong><%= item.expiration_date.strftime("%y-%m-%d") %></strong></font><br/>
+    </td>
+
+    <td class="ListActions">
+      <%= link_to 'Show', :action => 'show', :id => item %><br/>
+      <%= link_to 'Edit', :action => 'edit', :id => item %><br/>
+      <%= link_to 'Destroy', { :action => 'destroy', :id => item }, :confirm => 'Are you sure?', :method => :post %>
+    </td>
+  </tr>
+<% end %>
+<% end %>
+</table>
+
+<%= link_to 'Back', :action => 'list' %>

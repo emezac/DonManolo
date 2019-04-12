@@ -1,0 +1,31 @@
+<center><h3>Employees</h3></center>
+<table border=1 cellpadding="5" cellspacing="0">
+
+<% 
+odd_or_even = 0
+for employee in @employees 
+  odd_or_even = 1 - odd_or_even 
+%>
+  <tr valign="top" class="ListLine<%= odd_or_even %>">
+
+    <td >
+      <strong><span class="ListTitle"><%= h(employee.name) %></span></strong> 
+    </td>
+
+    <td  align="right">
+      Assigned to : <%= Store.find(employee.store_id).name %>
+    </td>
+
+    <td class="ListActions">
+      <%= link_to 'Show', :action => 'show', :id => employee %><br/>
+      <%= link_to 'Edit', :action => 'edit', :id => employee %><br/>
+      <%= link_to 'Destroy', { :action => 'destroy', :id => employee }, :confirm => 'Are you sure?', :method => :post %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @employee_pages.current.previous } if @employee_pages.current.previous %>
+<%= link_to 'Next page', { :page => @employee_pages.current.next } if @employee_pages.current.next %> 
+<%= link_to 'New employee', :action => 'new' %>
+

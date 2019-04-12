@@ -1,0 +1,397 @@
+
+.invalid {
+/*   border: 1px solid #f00;*/
+   background-color: #fcc;
+}
+
+
+body { 
+ background-color: #FFF;
+ color: #333;
+ font-family: verdana, arial, helvetica, sans-serif;
+ font-size:   13px;
+ line-height: 18px;
+}
+
+table{ 
+  border: solid 1px #000000;
+}
+
+th {
+  background-color: #ccc;
+}
+
+td, table.edit_table th {
+  background-color: #eee;
+}
+
+table.edit_table th {
+  text-align: right;
+}
+
+table.empty, table.empty th, table.empty td, table.empty_bordered th, table.empty_bordered td{ 
+  border: 0;  
+  background-color: #ffffff;
+}
+
+table.empty_bordered{ 
+  border: 1;  
+  background-color: #ffffff;
+}
+
+table.selection{
+  border: solid 1px ##EEE5DE
+  color: #201C13;
+  font-size: 12px;
+}
+
+table.selection th {
+  background-color: #f0f0f0;
+}   
+
+table.selection td {
+  background-color: #fafafa;
+}
+
+table.tb_in_cssform {
+   width: 100%;
+}
+
+table.tb_in_cssform td{
+   background-color: #F0F0F0;
+}
+
+table.tb_in_cssform th{
+   background-color: #ddd;
+}
+
+
+img { border: 0; }
+
+select.ext { width : 100%;}
+
+.wait {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 200;
+  text-align: center;
+  top: 150px;
+  z-index:999;
+}
+
+.wait-block {
+  width: 200;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #444;
+}
+
+div.filter_list{
+  position:absolute;
+  background-color: #eee;
+  padding: 4px;
+  border-style:solid;
+  border-color: #ccc #888 #555 #bbb;
+}
+
+.notice{
+ color: red;
+}
+
+h1 {
+  text-align: center;
+}
+
+.num { text-align: right;}
+
+/*  scaffold */
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table; 
+}
+
+#errorExplanation {
+
+  border: 2px solid red;
+  padding: 5px;
+  padding-bottom: 12x;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #d00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+div.uploadStatus {
+  margin: 5px;
+}
+
+div.progressBar {
+  margin: 5px;
+}
+
+div.progressBar div.border {
+  background-color: #fff;
+  border: 1px solid grey;
+  width: 100%;
+}
+
+div.progressBar div.background {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+
+
+
+
+.gal-scaffold-header {
+  background-color: #005CB8;
+  position: relative;
+}
+
+.gal-scaffold-header h2 {
+  color: #fff;
+  padding: 2px 5px 4px 5px;
+  margin: 0;
+  font: normal 17px verdana, sans-serif;
+}
+
+.gal-scaffold-header div.actions a {
+  color: #fff;
+  background: url(../images/add.gif) 1px 50% no-repeat;
+  font: bold 14px arial, sans-serif;
+  letter-spacing: -1px;
+  text-decoration: none;
+  padding: 1px 2px 1px 19px;
+}
+
+.gal-scaffold-header div.actions a:hover {
+  background: #378CDF url(../images/add.gif) 1px 50% no-repeat;
+}
+
+.gal-scaffold-header div.actions {
+  position: absolute;
+  right: 5px;
+  top: 3px;
+  /*width: 120px;*/
+  text-align: right;
+}
+
+.gal-scaffold-header div.actions img {
+  margin-bottom: -3px;
+}
+
+/*
+gal-scaffold form,
+.gal-scaffold table,
+.gal-scaffold p,
+.gal-scaffold div,
+.gal-scaffold fieldset {
+margin: 0;
+padding: 0;
+}
+
+.gal-scaffold {
+margin: 5px 0;
+}
+
+* html .gal-scaffold {
+height: 1%;
+}
+*/
+
+table.gal-scaffold {
+width: 100%;
+}
+
+.gal-scaffold a {
+color: #06c;
+text-decoration: none;
+}
+
+.gal-scaffold a:hover {
+background-color: #ff8;
+}
+
+
+
+/* Table Column Headers
+   ============================= */
+
+.gal-scaffold th {
+  background-color: #9DBEFF;
+  color: #222;
+  text-align: left;
+}
+
+/*
+.gal-scaffold th a,
+.gal-scaffold th p {
+  font: bold 11px arial, sans-serif;
+  display: block; 
+  color: #222;
+  background-color: #ccc;
+}
+
+.gal-scaffold th a {
+  color: #fff;
+  padding: 2px 15px 2px 5px;
+}
+*/
+.gal-scaffold th p {
+  color: #eee;
+  padding: 2px 5px;
+}
+
+/*
+.gal-scaffold th a:hover {
+  background-color: #000;
+  color: #ff8;
+}
+
+.gal-scaffold th.sorted {
+  background-color: #333;
+}
+
+.gal-scaffold th.asc a,
+.gal-scaffold th.asc a:hover {
+  background: #333 url(../images/arrow_up.gif) right 50% no-repeat;
+}
+
+.gal-scaffold th.desc a,
+.gal-scaffold th.desc a:hover {
+  background: #333 url(../images/arrow_down.gif) right 50% no-repeat;
+}
+*/
+
+/* Table Body Styling
+   ============================= */
+
+.gal-scaffold td {
+  padding: 2px 1px; 
+  color: #333;
+  font-family: Verdana, sans-serif;
+  font-size: 11px;
+  background-color: #E6F2FF;
+  border-bottom: solid 1px #C5DBF7;
+  border-left: solid 1px #C5DBF7;
+}
+
+.gal-scaffold td.actions {
+  border-right: solid 1px #ccc;
+}
+
+.gal-scaffold tr.even td {
+  background-color: #fff;
+  border-left: solid 1px #ddd;
+}
+
+.gal-scaffold tr td.sorted {
+  background-color: #B9DCFF;
+  border-bottom: solid 1px #AFD0F5;
+}
+
+.gal-scaffold tr.even td.sorted {
+  background-color: #E6F2FF;
+  border-bottom: solid 1px #AFD0F5;
+}
+
+.gal-scaffold td.empty {
+  color: #999;
+  text-align: center;
+}
+
+/* Table Actions (Edit, Delete) Styling
+   ============================= */
+
+.gal-scaffold td.actions {
+  padding: 0;
+  width: 1%;
+}
+
+.gal-scaffold td.actions table {
+  float: right;
+  width: auto;
+  margin-right: 5px;
+}
+
+.gal-scaffold td.actions table td {
+border: none;
+text-align: right;
+padding: 0 2px;
+}
+
+.gal-scaffold td.actions a {
+font: bold 11px verdana, sans-serif;
+letter-spacing: -1px;
+padding: 2px;
+margin: 0 2px;
+line-height: 16px;
+}
+
+/* gal-scaffold Footer Styling
+   ========================== */
+
+.gal-scaffold-totals td {
+	border-top: 2px solid #005CB8;
+	font: bold 12px arial, sans-serif;
+}
+
+.gal-scaffold-footer {
+  text-align: right;
+  background-color: #005CB8;
+  padding: 1px 5px 2px 5px;
+  border-bottom: none;
+  color: #ccc;
+  font: bold 12px arial, sans-serif;
+}
+
+.gal-scaffold-footer a {
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0;
+  padding: 0 2px;
+  margin: 0 -2px;
+  font: bold 12px arial, sans-serif;
+}
+
+.gal-scaffold-footer a:hover {
+  background-color: #378CDF;
+}
+

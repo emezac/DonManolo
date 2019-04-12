@@ -1,0 +1,11 @@
+<%= error_messages_for 'item' %>
+
+<h3> Please select one item </h3>
+<!--[form:item]-->
+<%= form_tag ( :action => :items_sold_byitem_calc,  :method => :post ) %>
+<p><label for="item_id">Item</label><br/>
+<%= select("item", "item_id", Item.find(:all, :order => 'id').collect {|c| [c.description, c.barcode] }) %></p>
+<%= submit_tag 'Send' %>
+<% end_form_tag %>
+<!--[eoform:item]-->
+

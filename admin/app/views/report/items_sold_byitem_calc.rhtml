@@ -1,0 +1,54 @@
+<center><h3>Item : <%= @para%></h3></center>
+<table border=1 cellpadding="5" cellspacing="0">
+<tr>
+<th> Item </th>
+<th> Qty </th>
+<th> Price</th>
+<th> Total </th>
+<th> Client </th>
+<th> Cashier </th>
+<th> Date </th>
+</tr>
+<% 
+odd_or_even = 0
+for histos in  @historicsales_byitem
+  odd_or_even = 1 - odd_or_even 
+%>
+  <tr valign="top" class="ListLine<%= odd_or_even %>">
+
+    <td  align="right">
+      <%= Item.find(:first, :conditions => ["barcode = ?",histos.item_id]).description %>
+    </td>
+
+
+    <td  align="left">
+      <span class="ListTitle"> <%= h(histos.qty) %></span><br />
+    </td>
+
+    <td  align="left">
+      <span class="ListTitle"> <%= h(histos.price) %></span><br />
+    </td>
+
+    <td  align="left">
+      <span class="ListTitle"> <%= h(histos.total) %></span><br />
+    </td>
+
+    <td  align="right">
+      <%= Client.find(histos.client_id).name %>
+    </td>
+
+    <td  align="right">
+      <%= Employee.find(histos.cashier_id).name %>
+    </td>
+
+    <td >
+      <strong><span class="ListTitle"><%= h(histos.idsale.to_date.strftime("%y%/%m/%d at %I:%M%p")) %></span></strong> 
+    </td>
+  </tr>
+<% end %>
+</table>
+<center><font color = red>Total = $<%= @tot %></font> </center>
+
+<center><img src=/images/sbyitem.png></center>
+
+<%= link_to 'Back', :action => 'items_sold_byitem' %>

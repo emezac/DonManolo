@@ -1,0 +1,8 @@
+<% for column in ItemAlias.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @item_alias.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @item_alias %> |
+<%= link_to 'Back', :action => 'list' %>

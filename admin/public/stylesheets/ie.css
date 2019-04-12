@@ -1,0 +1,41 @@
+/*
+  ie.css - styles just for Internet Explorer
+  Copyright (c) 2007 The Pragmatic Programmers
+*/
+
+#content .box div {
+  display: inline-block;
+}
+#navigation a.login-button img {
+  margin-bottom: 0;
+}
+#content #discounts {
+  margin-left: 0;
+}
+#content #cart .quantity {
+  width: 114px;
+}
+#content #head ul.tabs {
+  padding-bottom: 6px;
+  margin-bottom: -7px;
+}
+#content #head ul.tabs li {
+  dispaly: inline;
+  margin: 0;
+  margin-right: 5px;
+  padding: 0;
+}
+#content #head ul.tabs li a {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+#content #head ul.tabs li a span {
+  display: inline-block;
+  margin: 0;
+  margin-right: -.25em;
+  padding: 4px;
+  padding-left: 15px;
+  padding-right: 18px;
+  cursor: pointer;
+}

@@ -1,0 +1,22 @@
+<h2>Assign users to  employees</h2>
+
+
+<!--[form:employee]-->
+<%= form_tag ( :action => :assign_user_exec,  :method => :post ) %>
+<table>
+<tr><td>
+<label for="user_id">User</label><br/>
+<%= select("user", "user_id", User.find(:all).collect {|u| [u.name, u.id] }) %>
+</td><td> 
+<label for="employee_id">Employee</label><br/>
+<%= select("employee", "employee_id", Employee.find(:all).collect {|e| [e.name, e.id] }) %></td>
+</tr>
+</table>
+
+<%= submit_tag 'Send' %>
+<% end_form_tag %>
+<!--[eoform:employee]-->
+
+<br>
+
+<%= link_to 'Back', :action => 'list_users' %>

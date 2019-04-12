@@ -1,0 +1,7 @@
+ Please select : 
+<%= form_tag ( :action => :items_sold_bydate_calc,  :method => :post ) %>
+<p><label for="item_id">Date</label><br/>
+<%= select('item', 'item_id', @hs.to_a.uniq.collect  {|d| d}) %>
+<%= submit_tag 'Send' %>
+<% end_form_tag %>
+

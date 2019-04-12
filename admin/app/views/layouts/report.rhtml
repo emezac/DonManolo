@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Don Manolo : <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'asset' %>
+</head>
+<body>
+ <div id="banner">
+            <img src="/images/dmstores.png"/>
+            <%= @page_title || " Report area " %>
+        </div>
+        <div id="columns">
+            <div id="side">
+                <a href="http://localhost:3000/report/">Report area</a><br />
+                <a href="http://localhost:3000/report/inventoryv">Inventory valuation</a><br />
+                <a href="http://localhost:3000/report/shopping_list">Shopping List: All items</a><br />
+                <a href="http://localhost:3000/report/shopping_list_byc">Shopping List by category</a><br />
+                <a href="http://localhost:3000/report/shopping_performed">Shopping Performed</a><br />
+                <a href="http://localhost:3000/report/items_sold_bydate">Items sold by date</a><br />
+                <a href="http://localhost:3000/report/allsales">Sales</a><br />
+                <a href="http://localhost:3000/report/best_item">Best item</a><br />
+                <a href="http://localhost:3000/login/">Administration area</a><br />
+                <a href="http://localhost:3000/login/logout">Logout</a><br />
+            </div>
+            <div id="main">
+                <%= @content_for_layout %>
+            </div>
+        </div>
+    </body>
+</html>
+
+

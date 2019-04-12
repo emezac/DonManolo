@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Don Manolo : <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'asset' %>
+</head>
+<body>
+ <div id="banner">
+            <img src="/images/dmemployee.png"/>
+            <%= @page_title || "Employee Administration" %>
+        </div>
+        <div id="columns">
+            <div id="side">
+                <a href="http://localhost:3000/login/">Home</a><br />
+                <a href="http://localhost:3000/admin_item">Items</a><br/>
+                <a href="http://localhost:3000/admin_itemalias">Item aliases</a><br/>
+                <a href="http://localhost:3000/admin_category">Item categories</a><br />
+                <a href="http://localhost:3000/login/list_users">Users</a><br />
+                <a href="http://localhost:3000/admin_client">Clients</a><br />
+                <a href="http://localhost:3000/admin_employee">Employees</a><br />
+                <a href="http://localhost:3000/admin_provider">Providers</a><br />
+                <a href="http://localhost:3000/report">Reports</a><br />
+                <a href="http://localhost:3000/login/logout">Logout</a><br />
+            </div>
+            <div id="main">
+                <%= @content_for_layout %>
+            </div>
+        </div>
+    </body>
+</html>
+
+

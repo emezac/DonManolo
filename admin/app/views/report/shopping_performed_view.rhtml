@@ -1,0 +1,45 @@
+<center><h3>Shopping perfomed </h3></center>
+
+<table border=1 cellpadding="5" cellspacing="0">
+<tr><th> Item description </th><th> Sell's price </th><th> Cost price</th><th> Qty purchased</th><th>Date purchased</th><th> Total </th>
+</tr>
+
+<% 
+odd_or_even = 0
+for item in @shops 
+  odd_or_even = 1 - odd_or_even 
+%>
+  <tr valign="top" class="ListLine<%= odd_or_even %>">
+
+    <td >
+      <strong><span class="ListTitle"><%= h(item.description) %></span></strong> |
+      <font size =-3>
+      barcode: <%= h(item.barcode) %>
+    </font>
+    </td>
+
+    <td  align="left">
+      <span class="ListTitle">$<%= sprintf("%0.2f",item.price) %></span><br />
+    </td>
+
+    <td  align="left">
+      <span class="ListTitle">$<%= sprintf("%0.2f",item.cost_price) %></span><br />
+    </td>
+
+    <td  align="left">
+      <span class="ListTitle"><%= (item.qty_purchased) %></span><br />
+    </td>
+
+    <td >
+      <strong><span class="ListTitle"><%= h(item.date_purchased.to_date.strftime("%y-%m-%d")) %></span></strong> 
+    </td>
+
+   <td  align="left">
+      <span class="ListTitle">$ <%= sprintf("%0.2f",(item.qty_purchased)*item.cost_price) %></span><br />
+    </td>
+
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Back', :action => 'shopping_performed' %>

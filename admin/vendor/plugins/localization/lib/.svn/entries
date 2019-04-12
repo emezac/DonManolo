@@ -1,0 +1,41 @@
+8
+
+dir
+40
+https://gal.svn.sourceforge.net/svnroot/gal/trunk/vendor/plugins/localization/lib
+https://gal.svn.sourceforge.net/svnroot/gal
+
+
+
+2007-01-28T09:37:47.764024Z
+33
+addsw
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+abd7be6e-dc1b-0410-bb7d-a53f381da253
+
+localization.rb
+file
+
+
+
+
+2007-10-13T02:44:17.000000Z
+aa81ddf6a326d72d794dd96b98e52537
+2007-01-28T09:37:47.764024Z
+33
+addsw
+has-props
+

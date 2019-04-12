@@ -1,0 +1,2 @@
+module HistoricsaleHelper
+end

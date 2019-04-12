@@ -1,0 +1,22 @@
+<%= error_messages_for 'item_alias' %>
+
+<!--[form:item_alias]-->
+<p><label for="item_alias_name">Name</label><br/>
+<%= text_field 'item_alias', 'name'  %></p>
+
+<p><label for="item_alias_itemid">Original Item</label><br/>
+<%= select("item", "item_id", Item.find(:all).collect {|s| [s.description, s.id] })%></p>
+
+<p><label for="item_alias_alternate_cost_price">Alternate cost price</label><br/>
+<%= text_field 'item_alias', 'alternate_cost_price'  %></p>
+
+<p><label for="item_alias_qty">Qty</label><br/>
+<%= text_field 'item_alias', 'qty'  %></p>
+
+<p><label for="item_wmsystem_id">Ware House Management System</label><br/>
+<%= select("item", "wmsystem_id", Wmsystem.find(:all).collect {|w| [w.name, w.id] })%></p>
+
+<p><label for="item_alias_expiration_date">Expiration date</label><br/>
+<%= datetime_select 'item_alias', 'expiration_date'  %></p>
+<!--[eoform:item_alias]-->
+

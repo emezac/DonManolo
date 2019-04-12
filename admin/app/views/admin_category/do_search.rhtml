@@ -1,0 +1,31 @@
+<center><h3>Categories</h3></center>
+<table border=1 cellpadding="5" cellspacing="0">
+
+<% if @categories.empty? %>
+  '<%=h @phr %>' not found!
+<% else %>
+  '<%=h @phr %>' found <b><%= @number_match %></b> time(s)!
+<br>
+<br>
+<% 
+odd_or_even = 0
+for categ in @categories 
+  odd_or_even = 1 - odd_or_even 
+%>
+  <tr valign="top" class="ListLine<%= odd_or_even %>">
+
+    <td >
+      <strong><span class="ListTitle"><%= h(categ.name) %></span></strong> 
+    </td>
+
+    <td class="ListActions">
+      <%= link_to 'Show', :action => 'show', :id => categ %><br/>
+      <%= link_to 'Edit', :action => 'edit', :id => categ %><br/>
+      <%= link_to 'Destroy', { :action => 'destroy', :id => categ }, :confirm => 'Are you sure?', :method => :post %>
+    </td>
+  </tr>
+<% end %>
+<% end %>
+</table>
+
+<%= link_to 'Back', :action => 'list' %>

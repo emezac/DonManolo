@@ -1,0 +1,23 @@
+<%= error_messages_for 'itemp' %>
+
+<!--[form:itemp]-->
+<p><label for="itemp_description">Description</label><br/>
+<%= select("itemp", "barcode", Item.find(:all, :conditions => ["category_id = ?", @para]).collect {|i| [i.description, i.barcode] }) %></p>
+
+<p><label for="itemp_price">Price</label><br/>
+<%= text_field 'itemp', 'price'  %></p>
+
+<p><label for="itemp_cost_price">Cost price</label><br/>
+<%= text_field 'itemp', 'cost_price'  %></p>
+
+<p><label for="itemp_qty">Qty purchased</label><br/>
+<%= text_field 'itemp', 'qty_purchased'  %></p>
+
+<p><label for="itemp_expiration_date">Expiration date</label><br/>
+<%= datetime_select 'itemp', 'expiration_date'  %></p>
+
+<p><label for="itemp_date_purchased">Date purchased</label><br/>
+<%= datetime_select 'itemp', 'date_purchased'  %></p>
+
+<!--[eoform:itemp]-->
+

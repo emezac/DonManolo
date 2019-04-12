@@ -1,0 +1,28 @@
+<%= error_messages_for 'user' %>
+
+<!--[form:user]-->
+<p><label for="user_name">Name</label><br/>
+<%= text_field 'user', 'name'  %></p>
+
+<p><label for="user_hashed_password">--secret--Hashed password</label><br/>
+<%= hidden_field 'user', 'hashed_password'  %></p>
+
+<p><label for="user_first_name">First name</label><br/>
+<%= text_field 'user', 'first_name'  %></p>
+
+<p><label for="user_last_name">Last name</label><br/>
+<%= text_field 'user', 'last_name'  %></p>
+
+<p><label for="user_language">Language</label><br/>
+<%= text_field 'user', 'language'  %></p>
+
+<p><label for="user_date_format">Date format</label><br/>
+<%= text_field 'user', 'date_format'  %></p>
+
+<p><label for="user_admin">Admin</label><br/>
+<select id="user_admin" name="user[admin]"><option value="false">False</option><option value="true">True</option></select></p>
+
+<p><label for="user_salt">--secret--Salt</label><br/>
+<%= hidden_field 'user', 'salt'  %></p>
+<!--[eoform:user]-->
+

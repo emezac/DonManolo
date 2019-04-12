@@ -1,0 +1,339 @@
+
+
+Processing ReportController#best_item (for 127.0.0.1 at 2007-11-12 20:00:01) [GET]
+  Session ID: 337ef02a6f7f35adb7aef07b0f782839
+  Parameters: {"action"=>"best_item", "controller"=>"report"}
+  [4;35;1mUser Columns (0.003016)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.003524)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 18) LIMIT 1[0m
+Rendering  within layouts/report
+Rendering report/best_item
+Completed in 0.01514 (66 reqs/sec) | Rendering: 0.00238 (15%) | DB: 0.02046 (135%) | 200 OK [http://localhost/report/best_item]
+
+
+Processing ReportController#best_item (for 127.0.0.1 at 2007-11-12 20:00:02) [GET]
+  Session ID: 337ef02a6f7f35adb7aef07b0f782839
+  Parameters: {"Data"=>nil, "action"=>"best_item", "controller"=>"report"}
+  [4;35;1mUser Columns (0.004105)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.002000)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 18) LIMIT 1[0m
+  [4;35;1mHistoricsale Load (0.001463)[0m   [0mSELECT item_id, sum(total) as total FROM historicsales GROUP BY item_id ORDER BY sum( total ) DESC[0m
+  [4;36;1mItem Load (0.002071)[0m   [0;1mSELECT * FROM items WHERE (barcode = NULL) LIMIT 1[0m
+
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.description):
+    .//app/controllers/report_controller.rb:186:in `best_item'
+    .//app/controllers/report_controller.rb:185:in `each'
+    .//app/controllers/report_controller.rb:185:in `best_item'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:113:in `handle_dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:79:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:63:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/webrick.rb:59
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing ReportController#best_item (for 127.0.0.1 at 2007-11-12 20:01:49) [GET]
+  Session ID: 337ef02a6f7f35adb7aef07b0f782839
+  Parameters: {"action"=>"best_item", "controller"=>"report"}
+  [4;35;1mUser Columns (0.003173)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.002556)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 18) LIMIT 1[0m
+Rendering  within layouts/report
+Rendering report/best_item
+Completed in 0.01486 (67 reqs/sec) | Rendering: 0.00245 (16%) | DB: 0.01537 (103%) | 200 OK [http://localhost/report/best_item]
+
+
+Processing ReportController#best_item (for 127.0.0.1 at 2007-11-12 20:01:50) [GET]
+  Session ID: 337ef02a6f7f35adb7aef07b0f782839
+  Parameters: {"Data"=>nil, "action"=>"best_item", "controller"=>"report"}
+  [4;35;1mUser Columns (0.003101)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.001734)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 18) LIMIT 1[0m
+  [4;35;1mHistoricsale Load (0.001459)[0m   [0mSELECT item_id, sum(total) as total FROM historicsales GROUP BY item_id ORDER BY sum( total ) DESC[0m
+  [4;36;1mHistoricsale Columns (0.002939)[0m   [0;1mSHOW FIELDS FROM historicsales[0m
+  [4;35;1mItem Load (0.002089)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Columns (0.003346)[0m   [0;1mSHOW FIELDS FROM items[0m
+
+
+TypeError (can't convert nil into Float):
+    .//app/controllers/report_controller.rb:187:in `sprintf'
+    .//app/controllers/report_controller.rb:187:in `best_item'
+    .//app/controllers/report_controller.rb:185:in `each'
+    .//app/controllers/report_controller.rb:185:in `best_item'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:113:in `handle_dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:79:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:63:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/webrick.rb:59
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing ReportController#best_item (for 127.0.0.1 at 2007-11-12 20:02:34) [GET]
+  Session ID: 337ef02a6f7f35adb7aef07b0f782839
+  Parameters: {"action"=>"best_item", "controller"=>"report"}
+  [4;35;1mUser Columns (0.003178)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.001836)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 18) LIMIT 1[0m
+Rendering  within layouts/report
+Rendering report/best_item
+Completed in 0.02160 (46 reqs/sec) | Rendering: 0.00265 (12%) | DB: 0.01968 (91%) | 200 OK [http://localhost/report/best_item]
+
+
+Processing ReportController#best_item (for 127.0.0.1 at 2007-11-12 20:02:35) [GET]
+  Session ID: 337ef02a6f7f35adb7aef07b0f782839
+  Parameters: {"Data"=>nil, "action"=>"best_item", "controller"=>"report"}
+  [4;35;1mUser Columns (0.003010)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.001758)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 18) LIMIT 1[0m
+  [4;35;1mHistoricsale Load (0.001539)[0m   [0mSELECT item_id, sum(total) as total FROM historicsales GROUP BY item_id ORDER BY sum( total ) DESC[0m
+  [4;36;1mHistoricsale Columns (0.002956)[0m   [0;1mSHOW FIELDS FROM historicsales[0m
+  [4;35;1mItem Load (0.003166)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Columns (0.003396)[0m   [0;1mSHOW FIELDS FROM items[0m
+  [4;35;1mItem Load (0.002051)[0m   [0mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;36;1mItem Load (0.002160)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002184)[0m   [0mSELECT * FROM items WHERE (barcode = '23') LIMIT 1[0m
+  [4;36;1mItem Load (0.002146)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+Completed in 0.06741 (14 reqs/sec) | Rendering: 0.00014 (0%) | DB: 0.02437 (36%) | 200 OK [http://localhost/report/best_item?Data]
+
+
+Processing ReportController#allsales (for 127.0.0.1 at 2007-11-12 20:04:40) [GET]
+  Session ID: 337ef02a6f7f35adb7aef07b0f782839
+  Parameters: {"action"=>"allsales", "controller"=>"report"}
+  [4;35;1mUser Columns (0.003140)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.001982)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 18) LIMIT 1[0m
+Rendering  within layouts/report
+Rendering report/allsales
+Completed in 0.01773 (56 reqs/sec) | Rendering: 0.00231 (13%) | DB: 0.00512 (28%) | 200 OK [http://localhost/report/allsales]
+
+
+Processing ReportController#allsales (for 127.0.0.1 at 2007-11-12 20:04:40) [GET]
+  Session ID: 337ef02a6f7f35adb7aef07b0f782839
+  Parameters: {"Data"=>nil, "action"=>"allsales", "controller"=>"report"}
+  [4;35;1mUser Columns (0.003187)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.002071)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 18) LIMIT 1[0m
+  [4;35;1mSale Columns (0.002130)[0m   [0mSHOW FIELDS FROM sales[0m
+  [4;36;1mSQL (0.001622)[0m   [0;1mSELECT sum(total) AS sum_total, idsale AS idsale FROM sales GROUP BY idsale LIMIT 20[0m
+Completed in 0.03276 (30 reqs/sec) | Rendering: 0.00015 (0%) | DB: 0.00901 (27%) | 200 OK [http://localhost/report/allsales?Data]
+
+
+Processing ReportController#items_sold_bydate (for 127.0.0.1 at 2007-11-12 20:04:45) [GET]
+  Session ID: 337ef02a6f7f35adb7aef07b0f782839
+  Parameters: {"action"=>"items_sold_bydate", "controller"=>"report"}
+  [4;35;1mUser Columns (0.004631)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.002943)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 18) LIMIT 1[0m
+  [4;35;1mHistoricsale Load (0.001413)[0m   [0mSELECT idsale FROM historicsales GROUP BY idsale ORDER BY idsale DESC[0m
+  [4;36;1mHistoricsale Columns (0.004526)[0m   [0;1mSHOW FIELDS FROM historicsales[0m
+Rendering  within layouts/report
+Rendering report/items_sold_bydate
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47report47items_sold_bydate46rhtml at script/../config/../app/views/report/items_sold_bydate.rhtml:6)
+Completed in 0.08457 (11 reqs/sec) | Rendering: 0.00725 (8%) | DB: 0.01351 (15%) | 200 OK [http://localhost/report/items_sold_bydate]
+
+
+Processing ReportController#items_sold_bydate_calc (for 127.0.0.1 at 2007-11-12 20:04:48) [POST]
+  Session ID: 337ef02a6f7f35adb7aef07b0f782839
+  Parameters: {"commit"=>"Send", "action"=>"items_sold_bydate_calc", "method"=>"post", "controller"=>"report", "item"=>{"item_id"=>"20071111"}}
+  [4;35;1mUser Columns (0.004197)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.002865)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 18) LIMIT 1[0m
+  [4;35;1mHistoricsale Load (0.020982)[0m   [0mselect idsale,price,item_id,qty,client_id,cashier_id,total from historicsales WHERE idsale like '%20071111%'[0m
+  [4;36;1mHistoricsale Columns (0.004104)[0m   [0;1mSHOW FIELDS FROM historicsales[0m
+  [4;35;1mHistoricsale Load (0.003099)[0m   [0mselect distinct h.idsale, cr.amount,cl.name as client,e.name as cashier from historicsales h, creditpayments cr,clients cl, employees e where h.idsale = cr.id and h.client_id = cl.id and e.id = h.cashier_id and h.idsale like '%20071111%'[0m
+  [4;36;1mHistoricsale Load (0.001800)[0m   [0;1mselect distinct h.idsale, cr.amount,cl.name as client,e.name as cashier from historicsales h, cashpayments cr,clients cl, employees e where h.idsale = cr.id and h.client_id = cl.id and e.id = h.cashier_id and h.idsale like '%20071111%'[0m
+  [4;35;1mHistoricsale Load (0.002424)[0m   [0mselect distinct h.idsale, cr.amount,cl.name as client,e.name as cashier from historicsales h, promopayments cr,clients cl, employees e where h.idsale = cr.id and h.client_id = cl.id and e.id = h.cashier_id and h.idsale like '%20071111%'[0m
+Rendering  within layouts/report
+Rendering report/items_sold_bydate_calc
+  [4;36;1mItem Load (0.015788)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mItem Columns (0.003200)[0m   [0mSHOW FIELDS FROM items[0m
+  [4;36;1mClient Columns (0.002401)[0m   [0;1mSHOW FIELDS FROM clients[0m
+  [4;35;1mClient Load (0.001582)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Columns (0.002354)[0m   [0;1mSHOW FIELDS FROM employees[0m
+  [4;35;1mEmployee Load (0.001451)[0m   [0mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;36;1mItem Load (0.002176)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mClient Load (0.001375)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Load (0.001238)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mItem Load (0.002210)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mClient Load (0.001355)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mEmployee Load (0.001239)[0m   [0mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;36;1mItem Load (0.015774)[0m   [0;1mSELECT * FROM items WHERE (barcode = '23') LIMIT 1[0m
+  [4;35;1mClient Load (0.001413)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Load (0.001359)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mItem Load (0.002157)[0m   [0mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;36;1mClient Load (0.001365)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mEmployee Load (0.001268)[0m   [0mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;36;1mItem Load (0.002310)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;35;1mClient Load (0.001372)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Load (0.001250)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;35;1mItem Load (0.002136)[0m   [0mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;36;1mClient Load (0.001326)[0m   [0;1mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;35;1mEmployee Load (0.001259)[0m   [0mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+  [4;36;1mItem Load (0.002226)[0m   [0;1mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;35;1mClient Load (0.001396)[0m   [0mSELECT * FROM clients WHERE (clients.`id` = 1) [0m
+  [4;36;1mEmployee Load (0.001252)[0m   [0;1mSELECT * FROM employees WHERE (employees.`id` = 21) [0m
+Completed in 0.45462 (2 reqs/sec) | Rendering: 0.31440 (69%) | DB: 0.11370 (25%) | 200 OK [http://localhost/report/items_sold_bydate_calc?method=post]
+
+
+Processing ReportController#allsales (for 127.0.0.1 at 2007-11-12 20:05:06) [GET]
+  Session ID: 337ef02a6f7f35adb7aef07b0f782839
+  Parameters: {"action"=>"allsales", "controller"=>"report"}
+  [4;35;1mUser Columns (0.002904)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.001924)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 18) LIMIT 1[0m
+Rendering  within layouts/report
+Rendering report/allsales
+Completed in 0.01805 (55 reqs/sec) | Rendering: 0.00458 (25%) | DB: 0.00483 (26%) | 200 OK [http://localhost/report/allsales]
+
+
+Processing ReportController#allsales (for 127.0.0.1 at 2007-11-12 20:05:07) [GET]
+  Session ID: 337ef02a6f7f35adb7aef07b0f782839
+  Parameters: {"Data"=>nil, "action"=>"allsales", "controller"=>"report"}
+  [4;35;1mUser Columns (0.003946)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.004653)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 18) LIMIT 1[0m
+  [4;35;1mSale Columns (0.002682)[0m   [0mSHOW FIELDS FROM sales[0m
+  [4;36;1mSQL (0.001481)[0m   [0;1mSELECT sum(total) AS sum_total, idsale AS idsale FROM sales GROUP BY idsale LIMIT 20[0m
+Completed in 0.03512 (28 reqs/sec) | Rendering: 0.00015 (0%) | DB: 0.01276 (36%) | 200 OK [http://localhost/report/allsales?Data]
+
+
+Processing ReportController#best_item (for 127.0.0.1 at 2007-11-12 20:05:12) [GET]
+  Session ID: 337ef02a6f7f35adb7aef07b0f782839
+  Parameters: {"action"=>"best_item", "controller"=>"report"}
+  [4;35;1mUser Columns (0.003957)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.001736)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 18) LIMIT 1[0m
+Rendering  within layouts/report
+Rendering report/best_item
+Completed in 0.01456 (68 reqs/sec) | Rendering: 0.00227 (15%) | DB: 0.00569 (39%) | 200 OK [http://localhost/report/best_item]
+
+
+Processing ReportController#best_item (for 127.0.0.1 at 2007-11-12 20:05:13) [GET]
+  Session ID: 337ef02a6f7f35adb7aef07b0f782839
+  Parameters: {"Data"=>nil, "action"=>"best_item", "controller"=>"report"}
+  [4;35;1mUser Columns (0.003806)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.001835)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 18) LIMIT 1[0m
+  [4;35;1mHistoricsale Load (0.001474)[0m   [0mSELECT item_id, sum(total) as total FROM historicsales GROUP BY item_id ORDER BY sum( total ) DESC[0m
+  [4;36;1mHistoricsale Columns (0.003538)[0m   [0;1mSHOW FIELDS FROM historicsales[0m
+  [4;35;1mItem Load (0.002116)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Columns (0.003463)[0m   [0;1mSHOW FIELDS FROM items[0m
+  [4;35;1mItem Load (0.002199)[0m   [0mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;36;1mItem Load (0.002776)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002217)[0m   [0mSELECT * FROM items WHERE (barcode = '23') LIMIT 1[0m
+  [4;36;1mItem Load (0.002170)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+Completed in 0.07556 (13 reqs/sec) | Rendering: 0.00015 (0%) | DB: 0.02559 (33%) | 200 OK [http://localhost/report/best_item?Data]
+
+
+Processing ReportController#best_item (for 127.0.0.1 at 2007-11-12 20:29:12) [GET]
+  Session ID: 337ef02a6f7f35adb7aef07b0f782839
+  Parameters: {"action"=>"best_item", "controller"=>"report"}
+  [4;35;1mUser Columns (0.003067)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.002307)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 18) LIMIT 1[0m
+Rendering  within layouts/report
+Rendering report/best_item
+Completed in 0.01435 (69 reqs/sec) | Rendering: 0.00293 (20%) | DB: 0.00537 (37%) | 200 OK [http://localhost/report/best_item]
+
+
+Processing ReportController#best_item (for 127.0.0.1 at 2007-11-12 20:29:13) [GET]
+  Session ID: 337ef02a6f7f35adb7aef07b0f782839
+  Parameters: {"Data"=>nil, "action"=>"best_item", "controller"=>"report"}
+  [4;35;1mUser Columns (0.003120)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.001736)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 18) LIMIT 1[0m
+  [4;35;1mHistoricsale Load (0.001439)[0m   [0mSELECT item_id, sum(total) as total FROM historicsales GROUP BY item_id ORDER BY sum( total ) DESC[0m
+  [4;36;1mHistoricsale Columns (0.003018)[0m   [0;1mSHOW FIELDS FROM historicsales[0m
+  [4;35;1mItem Load (0.002322)[0m   [0mSELECT * FROM items WHERE (barcode = '1001') LIMIT 1[0m
+  [4;36;1mItem Columns (0.003455)[0m   [0;1mSHOW FIELDS FROM items[0m
+  [4;35;1mItem Load (0.002092)[0m   [0mSELECT * FROM items WHERE (barcode = '213') LIMIT 1[0m
+  [4;36;1mItem Load (0.002050)[0m   [0;1mSELECT * FROM items WHERE (barcode = '2001') LIMIT 1[0m
+  [4;35;1mItem Load (0.002045)[0m   [0mSELECT * FROM items WHERE (barcode = '23') LIMIT 1[0m
+  [4;36;1mItem Load (0.002103)[0m   [0;1mSELECT * FROM items WHERE (barcode = '1') LIMIT 1[0m
+Completed in 0.06592 (15 reqs/sec) | Rendering: 0.00014 (0%) | DB: 0.02338 (35%) | 200 OK [http://localhost/report/best_item?Data]
+
+
+Processing ReportController#allsales (for 127.0.0.1 at 2007-11-12 21:54:01) [GET]
+  Session ID: 337ef02a6f7f35adb7aef07b0f782839
+  Parameters: {"action"=>"allsales", "controller"=>"report"}
+  [4;35;1mUser Columns (0.054194)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.004362)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 18) LIMIT 1[0m
+Rendering  within layouts/report
+Rendering report/allsales
+Completed in 0.08619 (11 reqs/sec) | Rendering: 0.01805 (20%) | DB: 0.05856 (67%) | 200 OK [http://localhost/report/allsales]
+
+
+Processing ReportController#allsales (for 127.0.0.1 at 2007-11-12 21:54:02) [GET]
+  Session ID: 337ef02a6f7f35adb7aef07b0f782839
+  Parameters: {"Data"=>nil, "action"=>"allsales", "controller"=>"report"}
+  [4;35;1mUser Columns (0.003149)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.001869)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 18) LIMIT 1[0m
+  [4;35;1mSale Columns (0.002312)[0m   [0mSHOW FIELDS FROM sales[0m
+  [4;36;1mSQL (0.001395)[0m   [0;1mSELECT sum(total) AS sum_total, idsale AS idsale FROM sales GROUP BY idsale LIMIT 20[0m
+Completed in 0.02957 (33 reqs/sec) | Rendering: 0.00014 (0%) | DB: 0.00873 (29%) | 200 OK [http://localhost/report/allsales?Data]

@@ -1,0 +1,17 @@
+<%= error_messages_for 'employee' %>
+
+<!--[form:employee]-->
+<p><label for="employee_name">Name</label><br/>
+<%= text_field 'employee', 'name'  %></p>
+
+<p><label for="employee_name">Cashier ?</label>
+<%= check_box "employee","cashier", {}, "1" ,"0" %> 
+
+<p><label for="employee_store_id">Store</label><br/>
+<%= select("employee", "store_id", Store.find(:all).collect {|c| [c.name, c.id] }) %></p>
+
+
+<!--[eoform:employee]-->
+
+
+

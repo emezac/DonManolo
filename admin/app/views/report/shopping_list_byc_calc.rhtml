@@ -1,0 +1,43 @@
+<center><h3>Shopping_list : <%= @para %></h3></center>
+
+<table border=1 cellpadding="5" cellspacing="0">
+<tr><th> Item description </th><th> Cost price</th><th> Qty to buy</th><th> Total </th>
+</tr>
+
+<% 
+odd_or_even = 0
+for item in @items 
+  odd_or_even = 1 - odd_or_even 
+%>
+  <tr valign="top" class="ListLine<%= odd_or_even %>">
+
+    <td >
+      <strong><span class="ListTitle"><%= h(item.description) %></span></strong> |
+      <font size =-3>
+      Stock level: <%= h(item.qty) %> |
+      Minimum stock: <%= h(item.minimum_stock) %>
+    </font>
+    </td>
+
+    <td  align="left">
+      <span class="ListTitle">$<%= sprintf("%0.2f",item.cost_price) %></span><br />
+    </td>
+
+    <td  align="left">
+      <span class="ListTitle"><%= (item.minimum_stock-item.qty) %></span><br />
+    </td>
+
+    <td  align="left">
+      <span class="ListTitle">$ <%= sprintf("%0.2f",(item.minimum_stock-item.qty)*item.cost_price) %></span><br />
+    </td>
+  </tr>
+<% end %>
+</table>
+<table>
+ <tr><td></td><td></td><td></td><td></td><td width = 13%> 
+      <font color = "red"><span class="ListTitle">Total: $<%= sprintf("%0.2f",@tot) %></span></font><br/>
+     </td>
+ </tr>
+</table>
+
+<%= link_to 'Back', :action => 'shopping_list_byc' %>

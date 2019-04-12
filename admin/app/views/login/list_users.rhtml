@@ -1,0 +1,47 @@
+<center><h3>Users</h3></center>
+<table border=1 cellpadding="5" cellspacing="0">
+
+<% 
+odd_or_even = 0
+for user in @users 
+  odd_or_even = 1 - odd_or_even 
+%>
+  <tr valign="top" class="ListLine<%= odd_or_even %>">
+
+    <td >
+      <strong><span class="ListTitle"><%= h(user.name) %></span></strong> 
+    </td>
+
+    <td  align="left">
+      <span class="ListTitle"><%= h(user.first_name) %></span><br />
+    </td>
+
+    <td  align="left">
+      <span class="ListTitle"><%= h(user.last_name) %></span><br/>
+    </td>
+
+    <td  align="right">
+      Locale : <%= Language.find(user.language).name %>
+    </td>
+
+    <td  align="left">
+      Admin ? :  <span class="ListTitle"><%= h(user.admin) %></span><br/>
+    </td>
+
+
+    <td class="ListActions">
+      <%= link_to 'Show', :action => 'show', :id => user %><br/>
+      <%= link_to 'Edit', :action => 'edit_user', :id => user %><br/>
+      <%= link_to 'Destroy', { :action => 'delete_user', :id => user }, :confirm => 'Are you sure?', :method => :post %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<%= link_to 'Previous page', { :page => @user_pages.current.previous } if @user_pages.current.previous %>
+<%= link_to 'Next page', { :page => @user_pages.current.next } if @user_pages.current.next %> 
+<br />
+<%= link_to 'Assign users to employees', :action => 'assign_user' %>
+<br />
+<%= link_to 'New user', :action => 'add_user' %>
+
+

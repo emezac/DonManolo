@@ -1,0 +1,42 @@
+<% for column in Client.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @client.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @client %> |
+<%= link_to 'Back', :action => 'list' %>
+<br>
+
+<center><h3> Credit's report  </h3></center>
+<center>
+
+</b>
+<table border=1 cellpadding="5" cellspacing="0">
+<tr>
+<th> Date </th>
+<th> Amount </th>
+<th> Action </th>
+</tr>
+
+<% 
+  odd_or_even = 0
+for credit in @credits 
+  odd_or_even = 1 - odd_or_even 
+%>
+  <tr valign="top" class="ListLine<%= odd_or_even %>">
+    <td >
+      <strong><span class="ListTitle"><%= h(credit.id.to_date.strftime("%y-%m-%d")) %></span></strong> 
+    </td>
+
+    <td >
+      <strong><span class="ListTitle">$<%= h(credit.amount) %></span></strong> 
+    </td>
+
+    <td class="ListActions">
+      <%= link_to 'Destroy ?', { :action => 'destroy_credit', :id => credit.id }, :confirm => 'Are you sure?', :method => :post %>
+    </td>
+  </tr>
+<% end %>
+</table>
+

@@ -1,0 +1,42 @@
+<% for column in Item.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b>
+ <%=h @item.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @item %> |
+<%= link_to 'Back', :action => 'list' %>
+
+<center><h3>Items alias </h3></center>
+<center>
+
+</b>
+<table border=1 cellpadding="5" cellspacing="0">
+
+<% 
+  odd_or_even = 0
+for item_alias in @item_aliases 
+  odd_or_even = 1 - odd_or_even 
+%>
+  <tr valign="top" class="ListLine<%= odd_or_even %>">
+
+    <td >
+      <strong><span class="ListTitle"><%= h(item_alias.name) %></span></strong> |
+    </td>
+
+    <td  align="left">
+      <span class="ListTitle">Qty: <%= h(item_alias.qty) %></span><br />
+    </td>
+
+    <td >
+      Expiration date:<strong><span class="ListTitle"><%= h(item_alias.expiration_date) %></span></strong> 
+    </td>
+
+    <td class="ListActions">
+      <%= link_to 'Edit', :action => 'edit_alias', :id => item_alias %><br/>
+    </td>
+  </tr>
+<% end %>
+</table>
+

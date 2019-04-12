@@ -1,0 +1,8 @@
+<center><h3>Purchase items</h3></center>
+
+<% form_tag :action => 'purchase_exec', :id => @item_alias do %>
+  <%= render :partial => 'form_purchase' %>
+  <%= submit_tag 'Send' %>
+<% end %>
+
+<%= link_to 'Back', :action => 'list' %>

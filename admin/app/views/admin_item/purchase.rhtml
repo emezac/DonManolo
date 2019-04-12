@@ -1,0 +1,25 @@
+<center><h3>Purchase items</h3></center>
+
+<center><h3>Please select one category</h3></center>
+<table border=1 cellpadding="5" cellspacing="0">
+
+<% 
+odd_or_even = 0
+for category in @categories 
+  odd_or_even = 1 - odd_or_even 
+%>
+  <tr valign="top" class="ListLine<%= odd_or_even %>">
+
+    <td >
+      <span class="ListTitle"><%= h(category.name) %></span> 
+    </td>
+
+    <td class="ListActions">
+      <%= link_to 'Purchase', :action => 'purchase_form', :id => category.id %><br/>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

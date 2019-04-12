@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--*- mode: xml -*-->
+<ui>
+  < class="GtkAboutDialog" id="about">
+    <property name="border_width">3</property>
+    <property name="visible">True</property>
+    <property name="destroy_with_parent">False</property>
+    <property comments="emeza@ergolinux.com" name="name" translatable="yes">DonManolo</property>
+    <property name="copyright" translatable="yes">2002-2007  EMC</property>
+    <property name="comments" translatable="yes">A Point of Sale growing to ERP</property>
+    <property name="license" translatable="yes">This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Library General Public License as
+published by the Free Software Foundation; either version 2 of the
+License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the GNU
+Library General Public License for more details.
+
+You should have received a copy of the GNU Library General Public
+License along with the Gnome Library; see the file COPYING.LIB.If not,
+write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+Boston, MA 02111-1307, USA.
+</property>
+    <property name="wrap_license">False</property>
+    <property name="website">http://www.ergolinux.com</property>
+    <property name="website_label" translatable="yes">Ergonix cogito ergo Linux</property>
+    <property name="authors">Enrique Meza C.
+Developer &amp; Art Designer</property>
+    <property name="documenters">EMC</property>
+    <property name="artists">EMC</property>
+    <property comments="TRANSLATORS: Replace this string with your names, one name per line." name="translator_credits" translatable="yes">EMC</property>
+    <property name="logo">dm.png</property>
+    <signal handler="aboutq" last_modification_time="Tue, 09 Oct 2007 18:21:34 GMT" name="response"/>
+  </class>
+</ui>

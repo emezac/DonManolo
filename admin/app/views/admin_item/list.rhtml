@@ -1,0 +1,68 @@
+<center><h3>Items</h3></center>
+<%= start_form_tag({:action=> "do_search"}, { :onSubmit => "Element.show('spinner')
+;" }) %>
+<table border=1>
+<tr>
+<td><label for="searchtext"><font size="1"><b>Search :</b></font></label></td>
+<td><%= text_field_tag :searchtext %></td>
+</tr>
+</table>
+<%= end_form_tag%>
+
+<%= observe_field(:searchtext,
+                 :frequency => 0.5,
+                 :update => :search_hits,
+                 :loading => "Element.show('spinner')",
+                 :complete => "Element.hide('spinner')",
+                 :url => { :action => :live_search }) %>
+
+<div id="search_hits"></div>
+
+<table border=1 cellpadding="5" cellspacing="0">
+<% 
+odd_or_even = 0
+for item in @items 
+  odd_or_even = 1 - odd_or_even 
+%>
+  <tr valign="top" class="ListLine<%= odd_or_even %>">
+
+    <td >
+      <strong><span class="ListTitle"><%= h(item.barcode) %></span></strong> |
+      <%= h(truncate(item.description, 80)) %>
+    </td>
+
+    <td  align="left">
+      <span class="ListTitle">Price: <%= h(item.price) %></span><br />
+      Cost price: <%= h(item.cost_price) %>
+    </td>
+
+    <td  align="left">
+      <span class="ListTitle">Qty: <%= h(item.qty) %></span><br />
+      Minimum stock: <%= h(item.minimum_stock) %>
+    </td>
+
+    <td  align="right">
+      <%= Category.find(item.category_id).name %>
+    </td>
+
+    <td align="right">
+      <%= Wmsystem.find(item.wmsystem_id).name %><br/>
+      <font size:1>Expires on: <strong><%= item.expiration_date.strftime("%y-%m-%d") %></strong></font><br/>
+    </td>
+
+    <td class="ListActions">
+      <%= link_to 'Show', :action => 'show', :id => item %><br/>
+      <%= link_to 'Edit', :action => 'edit', :id => item %><br/>
+      <%= link_to 'Destroy', { :action => 'destroy', :id => item }, :confirm => 'Are you sure?', :method => :post %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @item_pages.current.previous } if @item_pages.current.previous %>
+<%= link_to 'Next page', { :page => @item_pages.current.next } if @item_pages.current.next %> 
+<br>
+<%= link_to 'Purchase items', :action => 'purchase' %>
+<br>
+<%= link_to 'New item', :action => 'new' %>
+<br>

@@ -1,0 +1,47 @@
+<center><h3>Categories</h3></center>
+<%= start_form_tag({:action=> "do_search"}, { :onSubmit => "Element.show('spinner')
+;" }) %>
+<table border=1>
+<tr>
+<td><label for="searchtext"><font size="1"><b>Search :</b></font></label></td>
+<td><%= text_field_tag :searchtext %></td>
+</tr>
+</table>
+<%= end_form_tag%>
+
+<%= observe_field(:searchtext,
+                 :frequency => 0.5,
+                 :update => :search_hits,
+                 :loading => "Element.show('spinner')",
+                 :complete => "Element.hide('spinner')",
+                 :url => { :action => :live_search }) %>
+
+<div id="search_hits"></div>
+
+<table border=1 cellpadding="5" cellspacing="0">
+
+<% 
+odd_or_even = 0
+for category in @categories 
+  odd_or_even = 1 - odd_or_even 
+%>
+  <tr valign="top" class="ListLine<%= odd_or_even %>">
+
+    <td >
+      <span class="ListTitle"><%= h(category.name) %></span> 
+    </td>
+
+    <td class="ListActions">
+      <%= link_to 'Show', :action => 'show', :id => category %><br/>
+      <%= link_to 'Edit', :action => 'edit', :id => category %><br/>
+      <%= link_to 'Destroy', { :action => 'destroy', :id => category }, :confirm => 'Are you sure?', :method => :post %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @category_pages.current.previous } if @category_pages.current.previous %>
+<%= link_to 'Next page', { :page => @category_pages.current.next } if @category_pages.current.next %> 
+<br />
+<%= link_to 'New category', :action => 'new' %>
+

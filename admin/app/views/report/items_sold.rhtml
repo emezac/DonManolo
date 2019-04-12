@@ -1,0 +1,54 @@
+<center><h3>Items sold</h3></center>
+<table border=1 cellpadding="5" cellspacing="0">
+<tr>
+<th> Item </th>
+<th> Qty </th>
+<th> Price</th>
+<th> Total </th>
+<th> Client </th>
+<th> Cashier </th>
+<th> Date </th>
+</tr>
+<% 
+odd_or_even = 0
+for historicsale in @historicsales 
+  odd_or_even = 1 - odd_or_even 
+%>
+  <tr valign="top" class="ListLine<%= odd_or_even %>">
+
+    <td  align="right">
+      <%= Item.find(:first, :conditions => ["barcode = ?",historicsale.item_id]).description %>
+    </td>
+
+
+    <td  align="left">
+      <span class="ListTitle"> <%= h(historicsale.qty) %></span><br />
+    </td>
+
+    <td  align="left">
+      <span class="ListTitle"> <%= h(historicsale.price) %></span><br />
+    </td>
+
+    <td  align="left">
+      <span class="ListTitle"> <%= h(historicsale.total) %></span><br />
+    </td>
+
+    <td  align="right">
+      <%= Client.find(historicsale.client_id).name %>
+    </td>
+
+    <td  align="right">
+      <%= Employee.find(historicsale.cashier_id).name %>
+    </td>
+
+    <td >
+      <strong><span class="ListTitle"><%= h(historicsale.idsale.to_date.strftime("%y-%m-%d at %I:%M%p")) %></span></strong> 
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @historicsales_pages.current.previous } if @historicsales_pages.current.
+previous %>
+<%= link_to 'Next page', { :page => @historicsales_pages.current.next } if @historicsales_pages.current.next %> 
+

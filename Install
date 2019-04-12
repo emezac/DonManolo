@@ -1,0 +1,31 @@
+
+Requirements:
+
+-Ruby (1.8)
+-Ruby-Gnome2
+-Ruby on Rails (1.2.3)
+-Rupport & Gruff
+
+Quick Install:
+
+$untar donmanolo01.tar.gz
+$cd donmanolo
+$mysqladmin create dmstore
+$mysql dmstore < donmanolo/sql/dmstore.sql
+
+Database
+
+edit $/INSTALLPATH/donmanolo/lib/ProxyDb.rb
+and $/INSTALLPATH/donmanolo/admin/config/database.yml
+
+DM - User : admin & Password : admin
+
+To start POS :  
+cd $/INSTALLPATH/donmanolo
+ruby Main.rb
+
+To start Admin Interface :
+cd $/INSTALLPATH/donmanolo/admin/
+ruby script/server
+then : $BROWSER http://localhost:3000
+
