@@ -1,3 +1,5 @@
+# OLD CODE appears only for reference and historical purposes
+
 I believe Don Manolo center it's potential around the promise that
 intelligent products, systems, and services are tools that possess an
 incredible enabling ‘power’ in the hands of a user. DM focuses on a
